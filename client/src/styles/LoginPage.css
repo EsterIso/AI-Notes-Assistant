@@ -1,0 +1,477 @@
+/* ===========================
+    Login/Signup Page Container
+    =========================== */
+.login-page-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a 0%, #581c87 50%, #0f172a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===========================
+    Centered Content Area
+    =========================== */
+.content-area {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+/* ===========================
+    Form Container Styles
+    =========================== */
+.login-form-container, .signup-form-container {
+    min-width: min(500px, 90vw);
+    width: 100%;
+    max-width: 550px;
+    padding: clamp(20px, 5vw, 35px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    min-height: auto;
+    max-height: 90vh;
+    border-radius: 1.5rem;
+    z-index: 20;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+}
+
+.login-form-container:hover, .signup-form-container:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Login & Signup Form Specific: Skinnier & Taller --- */
+.login-form-container, .signup-form-container {
+    justify-content: center;
+    min-height: clamp(450px, 50vh, 550px);
+    max-width: 450px;
+    min-width: min(450px, 85vw);
+}
+
+/* ===========================
+    Form Layout & Titles
+    =========================== */
+.login-form, .signup-form {
+    text-align: center;
+    margin-bottom: 30px; 
+    margin-top: 0;
+    width: 100%;
+}
+
+.login-title, .signup-title {
+    font-size: 2.5rem; 
+    font-weight: 700;
+    background: linear-gradient(to right, #c084fc, #f472b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-top: -10px; 
+    margin-bottom: 40px; 
+    text-align: center;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+}
+
+/* ===========================
+    Form Fields
+    =========================== */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+    width: 100%;
+}
+
+.form-label {
+    text-align: left;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
+    font-size: 1rem;
+    margin-bottom: 6px;
+    font-weight: 500; 
+}
+
+.form-input {
+    padding: 14px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    outline: none;
+    border-radius: 0.75rem; 
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 380px; 
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+    color: white;
+    height: 20px;
+    transition: all 0.3s ease;
+}
+
+.form-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* --- Focus & Error States --- */
+.form-input:focus {
+    border: 1px solid rgba(168, 85, 247, 0.5);
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.1);
+}
+
+.form-group:focus-within .form-label {
+    color: #c084fc; 
+}
+
+.form-input.error {
+    border-color: rgba(244, 67, 54, 0.5);
+    background-color: rgba(244, 67, 54, 0.05);
+}
+
+/* ===========================
+    Buttons (Login/Signup)
+    =========================== */
+.login, .sign-up {
+    background: linear-gradient(to right, #a855f7, #ec4899);
+    color: white;
+    padding: 16px 32px; 
+    border: none;
+    border-radius: 9999px; 
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem; 
+    font-weight: 600; 
+    margin: 10px auto 0 auto; 
+    min-width: 120px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.login:hover, .sign-up:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(168, 85, 247, 0.3);
+}
+
+.login:active, .sign-up:active {
+    transform: scale(1.02);
+}
+
+/* ===========================
+    Animated Waves Background
+    =========================== */
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15vh;
+    background: url("../images/Wave.png");
+    background-size: 100vw 20vh;
+    z-index: 1;
+}
+.wave1 {
+    animation: animate 20s linear infinite;
+    z-index: 5;
+    opacity: 0.3;
+    animation-delay: 0s;
+    bottom: 0;
+}
+.wave2 {
+    animation: animate2 15s linear infinite;
+    z-index: 4;
+    opacity: 0.2;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+
+@keyframes animate {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 100vw;
+    }
+}
+@keyframes animate2 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -100vw;
+    }
+}
+
+/* ===========================
+    Floating Elements (StudyApp Style)
+    =========================== */
+.floating-element-1 {
+    position: absolute;
+    top: 5rem;
+    left: 2.5rem;
+    width: 5rem;
+    height: 5rem;
+    background-color: rgba(168, 85, 247, 0.2);
+    border-radius: 50%;
+    filter: blur(1rem);
+    animation: pulse 2s infinite;
+    z-index: 1;
+}
+
+.floating-element-2 {
+    position: absolute;
+    bottom: 5rem;
+    right: 2.5rem;
+    width: 8rem;
+    height: 8rem;
+    background-color: rgba(236, 72, 153, 0.2);
+    border-radius: 50%;
+    filter: blur(1rem);
+    animation: pulse 2s infinite;
+    animation-delay: 1s;
+    z-index: 1;
+}
+
+/* ===========================
+    Password Requirement Badges
+    =========================== */
+.requirements-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 6px;
+}
+
+.requirement-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 8px;
+    border-radius: 9999px;
+    font-size: 10px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(4px);
+}
+
+.badge-unmet {
+    background: rgba(244, 67, 54, 0.1);
+    color: #ff6b6b;
+    border: 1px solid rgba(244, 67, 54, 0.2);
+}
+
+.requirement-met {
+    background: rgba(16, 185, 129, 0.1);
+    color: #4ade80;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+/* ===========================
+    Signup Form Requirements & Errors
+    =========================== */
+.requirements-title {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    display: block;
+    text-align: left;
+}
+
+.requirements-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+    text-align: left;
+}
+
+.field-requirements {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    margin-top: 4px;
+    display: block;
+    text-align: left;
+}
+
+.error-message {
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    display: block;
+    text-align: center;
+    padding: 8px 12px;
+    background: rgba(244, 67, 54, 0.1);
+    border: 1px solid rgba(244, 67, 54, 0.2);
+    border-radius: 0.5rem;
+    backdrop-filter: blur(4px);
+}
+
+/* ===========================
+    Signup Link
+    =========================== */
+.signup-link {
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+}
+
+.signup-link a {
+    color: #c084fc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.signup-link a:hover {
+    color: #f472b6;
+    text-decoration: underline;
+}
+
+/* ===========================
+    Responsive Styles
+    =========================== */
+@media (max-width: 768px) {
+    .login-page-container {
+        padding: 2rem;
+    }
+    .content-area {
+        padding: 10px 0;
+    }
+    .login-form-container, .signup-form-container {
+        min-width: 85vw;
+        max-height: 98vh;
+        border-radius: 1rem;
+        margin: 5px;
+        padding: clamp(18px, 4vw, 28px);
+    }
+    .login-title, .signup-title {
+        font-size: 2rem;
+        letter-spacing: -0.25px;
+        margin-bottom: 25px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-input {
+        max-width: 100%; 
+        font-size: 1rem;
+        padding: 12px 14px;
+        height: 18px;
+    }
+    .form-label {
+        font-size: 0.95rem;
+        margin-bottom: 5px;
+    }
+    .login, .sign-up {
+        padding: 12px 24px;
+        font-size: 1rem;
+        margin-top: 6px;
+    }
+    .requirement-badge {
+        padding: 2px 6px;
+        font-size: 9px;
+    }
+    .requirements-container {
+        gap: 3px;
+        margin-top: 5px;
+    }
+    .floating-element-1 {
+        width: 3rem;
+        height: 3rem;
+        top: 2rem;
+        left: 1rem;
+    }
+    .floating-element-2 {
+        width: 5rem;
+        height: 5rem;
+        bottom: 2rem;
+        right: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-page-container {
+        padding: 1rem;
+    }
+    .content-area {
+        padding: 5px 0;
+    }
+    .login-form-container, .signup-form-container {
+        min-width: 95vw;
+        max-height: 99vh;
+        border-radius: 1rem;
+        margin: 2px;
+        padding: clamp(12px, 3vw, 20px);
+    }
+    .login-title, .signup-title {
+        font-size: 1.75rem;
+        letter-spacing: 0;
+        margin-bottom: 20px;
+    }
+    .form-group {
+        margin-bottom: 12px;
+    }
+    .form-input {
+        font-size: 0.95rem;
+        padding: 10px 12px;
+        height: 16px;
+    }
+    .form-label {
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+    }
+    .login, .sign-up {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+        margin-top: 5px;
+    }
+    .requirement-badge {
+        padding: 2px 6px;
+        font-size: 8px;
+        border-radius: 9999px;
+    }
+    .requirements-container {
+        gap: 2px;
+        margin-top: 4px;
+    }
+    .field-requirements, .error-message {
+        font-size: 0.8rem;
+        margin-top: 3px;
+    }
+    .signup-link {
+        margin-top: 10px;
+        font-size: 0.9rem;
+    }
+    .floating-element-1 {
+        width: 2rem;
+        height: 2rem;
+        top: 1rem;
+        left: 0.5rem;
+    }
+    .floating-element-2 {
+        width: 3rem;
+        height: 3rem;
+        bottom: 1rem;
+        right: 0.5rem;
+    }
+}
+
+/* ===========================
+    Animations
+    =========================== */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { loginUser } from '../services/authService'
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
-
+import { toast } from 'react-toastify';
 
 function useLoginForm() {
     const [loginData, setLoginData] = useState({
@@ -36,32 +36,41 @@ function useLoginForm() {
             })
 
             if (!response) {
-                setErrors({ general: "No response from server."});
+                const errorMsg = "No response from server.";
+                setErrors({ general: errorMsg });
+                toast.error(errorMsg);
                 return;
             }
 
             const { success, message, token } = response;
             if (success) {
                 // reminder to redirect to user homepage
-                alert(message);
+                toast.success(message || 'Welcome back! Login successful.');
                 login(response.token, response.user)
                 navigate('/');
             } else {
                 // Handle error messages from the server
                 if (typeof message === 'object') {
-                    setErrors({
+                    const fieldErrors = {
                         email: message.email || '',
                         password: message.password || ''
-                    });
+                    };
+                    setErrors(fieldErrors);
+                    
+                    // Show toast for general error
+                    const errorMessage = Object.values(fieldErrors).filter(Boolean).join(', ');
+                    toast.error(errorMessage || 'Please check your credentials');
                 } else {
                     setErrors({ general: message })
+                    toast.error(message || 'Invalid credentials');
                 }
             }
         } catch (error) {
-            console.error("Error during signup:", error);
-            setErrors({
-                general: 'An error occured during signup. Please try again later.'
-            });
+            console.error("Error during login:", error);
+            const errorMsg = 'An error occurred during login. Please try again later.';
+            
+            setErrors({ general: errorMsg });
+            toast.error(errorMsg);
         }
     };
 

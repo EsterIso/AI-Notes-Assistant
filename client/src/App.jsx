@@ -1,9 +1,7 @@
-// import { useAuth } from './hooks/useAuth'; // or however you handle auth
-import React from 'react';
 import PublicApp from './PublicApp';
 import { useAuth } from './context/AuthContext.jsx';
 import AuthenticatedApp from './AuthenticatedApp';
-// import Loading from './components/common/Loading';
+import { ToastContainer } from 'react-toastify';
 import './App.css';
 
 function Loading() {
@@ -25,7 +23,28 @@ function App() {
 
   console.log(`🎯 Showing ${isAuthenticated ? 'authenticated' : 'public'} app`);
 
-  return isAuthenticated ? <AuthenticatedApp /> : <PublicApp />;
+  return (
+    <>
+      {isAuthenticated ? <AuthenticatedApp /> : <PublicApp />}
+      
+      <ToastContainer
+        position="top-right"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        className="custom-toast-container"
+        toastClassName="custom-toast"
+        bodyClassName="custom-toast-body"
+        progressClassName="custom-toast-progress"
+      />
+    </>
+  );
 
 }
 

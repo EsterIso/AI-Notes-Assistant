@@ -79,16 +79,12 @@ function Sidebar({ isSidebarOpen, setIsSidebarOpen }) {
             title: "Workspace",
             items: [
                 { icon: Home, label: "Dashboard", path: "/" },
-                { icon: Zap, label: "Quick Upload", path: "/upload" },
-                { icon: Search, label: "Search", path: "/search" }
             ]
         },
         {
             title: "Content",
             items: [
                 { icon: FileText, label: "Documents", path: "/documents" },
-                { icon: Video, label: "Meeting Transcripts", path: "/transcripts" },
-                { icon: Edit3, label: "Raw Notes", path: "/notes" }
             ]
         },
         {
@@ -103,7 +99,6 @@ function Sidebar({ isSidebarOpen, setIsSidebarOpen }) {
             title: "Account",
             items: [
                 { icon: Settings, label: "Settings", path: "/settings" },
-                { icon: CreditCard, label: "Billing", path: "/billing" }
             ]
         }
     ];

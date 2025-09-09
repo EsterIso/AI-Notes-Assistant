@@ -1,6 +1,6 @@
 /* Sidebar Styles */
 .sidebar {
-    width: 280px;
+    grid-area: sidebar;
     background: rgba(15, 23, 42, 0.3);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -98,12 +98,13 @@
     background: rgba(255, 255, 255, 0.3);
 }
 .content {
-    margin-left: 280px;
+    grid-area: content;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .sidebar {
+        position: absolute;
         transform: translateX(-100%);
         transition: transform 0.3s ease;
         z-index: 200;
@@ -121,5 +122,6 @@
 
     .content {
         margin-left: 0;
-    }
+        width: 100%;
+  }
 }

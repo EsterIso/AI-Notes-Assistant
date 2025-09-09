@@ -239,6 +239,25 @@
     transform: translateX(2px);
 }
 
+/* Mobile toggle button */
+.mobile-toggle {
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: white;
+  display: none; 
+  transition: all 0.2s ease;
+}
+
+.mobile-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .top-header {
@@ -250,8 +269,23 @@
         margin: 0 1rem;
         max-width: none;
     }
+
+     .mobile-toggle {
+        display: block;
+    }
+
+    .logo {
+        margin-left: 0.5rem;
+    }
     
     .logo-text {
         display: none;
+    }
+}
+
+/* Desktop - hide toggle button */
+@media (min-width: 769px) {
+    .mobile-toggle {
+        display: none !important;
     }
 }

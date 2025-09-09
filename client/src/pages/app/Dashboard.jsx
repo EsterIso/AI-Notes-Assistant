@@ -1,5 +1,4 @@
-import AuthHeader from '../../components/layout/AuthHeader';
-import Sidebar from '../../components/layout/Sidebar';
+
 
 function Dashboard() {
 
@@ -7,10 +6,9 @@ function Dashboard() {
 
   return (
     <div className="app-container">
-      <AuthHeader/>
-      <Sidebar/>
-      
-        
+      {/* Your actual dashboard content goes here */}
+      <h1>Dashboard</h1>
+      {/* Add your dashboard-specific components here */}
     </div>
   );
 

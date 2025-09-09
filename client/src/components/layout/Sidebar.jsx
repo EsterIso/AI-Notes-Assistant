@@ -1,34 +1,84 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { 
-    Home, 
-    Zap, 
-    Search, 
-    FileText, 
-    Music, 
-    Video, 
-    Edit3,
-    Clipboard,
-    Target,
-    HelpCircle,
-    BarChart3,
-    Settings,
-    CreditCard,
-    Brain
+    Home, Zap, Search, FileText, Music, Video, Edit3,
+    Clipboard, Target, HelpCircle, BarChart3, Settings,
+    CreditCard, X
 } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import '../../styles/Sidebar.css';
 
-function Sidebar() {
+function Sidebar({ isSidebarOpen, setIsSidebarOpen }) {
     const navigate = useNavigate();
     const location = useLocation();
-    
+
     const isActive = (path) => location.pathname === path;
+
+    const handleNavigation = (path) => {
+        navigate(path);
+        // Only close sidebar on mobile
+        if (window.innerWidth <= 768) {
+            setIsSidebarOpen(false);
+        }
+    };
+
+    // Handle window resize to ensure proper sidebar behavior
+    useEffect(() => {
+        const handleResize = () => {
+            // On desktop, ensure sidebar is always considered "open"
+            if (window.innerWidth > 768) {
+                setIsSidebarOpen(true);
+            }
+        };
+
+        // Set initial state
+        handleResize();
+        
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, [setIsSidebarOpen]);
+
+    // Close sidebar when clicking outside (mobile only)
+    useEffect(() => {
+        const handleOutsideClick = (event) => {
+            // Only handle outside clicks on mobile
+            if (window.innerWidth <= 768 && isSidebarOpen) {
+                const sidebar = document.querySelector('.sidebar');
+                const mobileToggle = document.querySelector('.mobile-toggle');
+                
+                // Check if click is outside sidebar and not on the toggle button
+                if (sidebar && !sidebar.contains(event.target) && 
+                    mobileToggle && !mobileToggle.contains(event.target)) {
+                    setIsSidebarOpen(false);
+                }
+            }
+        };
+
+        // Add event listener with capture to catch events before they bubble
+        document.addEventListener('click', handleOutsideClick, true);
+        return () => document.removeEventListener('click', handleOutsideClick, true);
+    }, [isSidebarOpen, setIsSidebarOpen]);
+
+    // Prevent body scroll when sidebar is open on mobile
+    useEffect(() => {
+        if (window.innerWidth <= 768) {
+            if (isSidebarOpen) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Cleanup
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [isSidebarOpen]);
 
     const navigationSections = [
         {
             title: "Workspace",
             items: [
-                { icon: Home, label: "Dashboard", path: "/dashboard" },
+                { icon: Home, label: "Dashboard", path: "/" },
                 { icon: Zap, label: "Quick Upload", path: "/upload" },
                 { icon: Search, label: "Search", path: "/search" }
             ]
@@ -37,7 +87,6 @@ function Sidebar() {
             title: "Content",
             items: [
                 { icon: FileText, label: "Documents", path: "/documents" },
-                { icon: Music, label: "Audio Files", path: "/audio" },
                 { icon: Video, label: "Meeting Transcripts", path: "/transcripts" },
                 { icon: Edit3, label: "Raw Notes", path: "/notes" }
             ]
@@ -47,8 +96,7 @@ function Sidebar() {
             items: [
                 { icon: Clipboard, label: "Study Notes", path: "/study-notes" },
                 { icon: Target, label: "Flashcards", path: "/flashcards" },
-                { icon: HelpCircle, label: "Quiz Questions", path: "/quizzes" },
-                { icon: BarChart3, label: "Summaries", path: "/summaries" }
+                { icon: HelpCircle, label: "Quiz Questions", path: "/quizzes" }
             ]
         },
         {
@@ -61,8 +109,7 @@ function Sidebar() {
     ];
 
     return (
-        <aside className="sidebar">
-
+        <aside className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
             <nav className="sidebar-nav">
                 {navigationSections.map((section, sectionIndex) => (
                     <div key={sectionIndex} className="nav-section">
@@ -73,7 +120,8 @@ function Sidebar() {
                                 <button
                                     key={itemIndex}
                                     className={`nav-item ${isActive(item.path) ? 'active' : ''}`}
-                                    onClick={() => navigate(item.path)}
+                                    onClick={() => handleNavigation(item.path)}
+                                    type="button"
                                 >
                                     <IconComponent className="nav-icon" size={18} />
                                     <span>{item.label}</span>

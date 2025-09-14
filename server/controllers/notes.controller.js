@@ -63,7 +63,7 @@ export const createNote = async (req, res) => {
 export const getNotes = async (req, res) => {
     try {
         const notes = await Note.find({ userId: req.user.userId }).sort({ createdAt: -1 });
-        res.json({ success: true, notes });
+        res.json({ success: true, notes: notes });
     } catch (error) {
         res.status(500).json({ 
             success: false, 

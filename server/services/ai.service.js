@@ -72,20 +72,97 @@ export const processNoteWithAI = async (originalContent, inputType) => {
     
     console.log('Generating summary...');
     outputs.summary = await callOpenAI(
-      `Create a comprehensive summary of this content in clear, well-organized bullet points:\n\n${textToProcess}`
+    `Create a comprehensive and in-depth summary of this content following the blueprint structure below.
+
+    BLUEPRINT STRUCTURE TO FOLLOW:
+    1. Start with document metadata (authors, affiliations, publication info if available)
+    2. Create an "Overview" section with 2-3 paragraphs explaining the main topic and significance
+    3. Organize main content under "Key Points" with numbered sections (1, 2, 3, etc.)
+    4. Create additional major themed sections with horizontal rules (---) when topics warrant separate coverage
+    5. Use descriptive section headers with clear topic identification
+    5. Under each key point, use bullet points with detailed explanations
+    6. Include relevant case examples or specific details when present
+    7. Create additional major sections as needed (like "Additional Insights", methodology sections, etc.)
+    8. End with practical implications, conclusions, or future considerations
+    9. Include reference/citation information if available
+
+    FORMATTING REQUIREMENTS:
+    - Use ### for main section headers
+    - Use #### for subsection headers  
+    - Use numbered lists for major key points (#### 1. Header, #### 2. Header, etc.)
+    - Use bullet points (-) for detailed explanations under each key point
+    - Use **bold** for emphasis on important terms, concepts, and key phrases
+    - Include specific examples, statistics, case studies, and quantitative data when available
+    - Maintain academic/professional tone throughout
+    - Ensure each bullet point is substantive (2-3 sentences when possible)
+    - Include relevant quotes or specific details to add depth
+
+    DEPTH REQUIREMENTS:
+    - Cover each major section or topic thoroughly (not just 1–2 points)
+    - Include key details, explanations, and nuances so the summary captures the depth of the material
+    - Provide context for why each point matters
+    - Explain relationships between different concepts or sections
+    - Include practical applications or implications where relevant
+
+    Now create a comprehensive summary of this content following the above blueprint:\n\n${textToProcess}`
     );
 
     console.log('Generating flashcards...');
     outputs.flashcards = await callOpenAI(
-      `Generate 5-8 educational flashcards from this content. Return a JSON array of objects with "question" and "answer" fields. Make questions specific and test understanding:\n\n${textToProcess}\n\nReturn only valid JSON array:`,
+      `Generate 6-10 high-quality educational flashcards from this content covering key concepts, definitions, processes, and applications.
+
+    FLASHCARD REQUIREMENTS:
+    - Return a JSON array of objects with "question" and "answer" fields
+    - Create a variety of question types: definitions, explanations, applications, comparisons, and case-based scenarios
+    - Questions should test different levels of understanding (recall, comprehension, application)
+    - Ensure questions are clear, specific, and unambiguous
+    - Answers should be comprehensive but concise (2-4 sentences)
+    - Include brief context or explanation after the main answer to reinforce learning
+    - Cover the most important concepts, terminology, and practical applications from the material
+    - Avoid overly simple yes/no questions - focus on substantive learning objectives
+
+    EXAMPLES OF GOOD QUESTION TYPES:
+    - "What is [concept] and why is it significant?"
+    - "How does [process/intervention] work in [specific context]?"
+    - "What are the key differences between [A] and [B]?"
+    - "In what situations would you apply [technique/approach]?"
+    - "What factors contribute to [phenomenon/condition]?"
+
+    Content to process:
+    ${textToProcess}
+
+    Return only valid JSON array:`,
       { format: "json-array" }
     );
 
     console.log('Generating quiz questions...');
     outputs.quizQuestions = await callOpenAI(
-      `Create 4-6 multiple-choice quiz questions from this content. Return a JSON array with "question", "choices" (array of 4 options), and "answer" (correct choice index 0-3):\n\n${textToProcess}\n\nReturn only valid JSON array:`,
+      `Create 5-10 challenging multiple-choice quiz questions from this content that test deep comprehension and application.
+
+    QUIZ REQUIREMENTS:
+    - Return a JSON array with "question", "choices" (array of 4 options), "answer" (correct choice index 0-3), and "explanation" (brief rationale for correct answer)
+    - Questions should test understanding, not just memorization
+    - Include scenario-based and application questions when possible
+    - Make distractors (wrong answers) plausible but clearly incorrect to knowledgeable readers
+    - Vary question difficulty from moderate to challenging
+    - Cover different aspects of the material (concepts, processes, applications, implications)
+    - Avoid "all of the above" or "none of the above" options
+    - Ensure questions are specific and well-constructed
+
+    QUESTION TYPES TO INCLUDE:
+    - Conceptual understanding: "Which statement best describes...?"
+    - Application scenarios: "In this situation, what would be the most appropriate...?"
+    - Cause and effect: "What is the primary reason that...?"
+    - Comparison/analysis: "The main difference between X and Y is...?"
+    - Problem-solving: "When faced with [scenario], the best approach would be...?"
+
+    Content to process:
+    ${textToProcess}
+
+    Return only valid JSON array:`,
       { format: "json-array" }
     );
+
 
     console.log('Generating action items...');
     outputs.actionItems = await callOpenAI(

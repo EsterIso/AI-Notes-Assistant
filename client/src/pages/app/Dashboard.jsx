@@ -2,6 +2,7 @@ import React from "react";
 import { FileText, Clipboard, HelpCircle, Plus, Upload, Loader } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
 import useNotes from '../../hooks/useNotes';
+import ReactMarkdown from 'react-markdown';
 import "../../styles/Dashboard.css";
 
 function Dashboard() {
@@ -116,7 +117,7 @@ function Dashboard() {
               style={{ cursor: 'pointer' }}
             >
               <h3>{note.title}</h3>
-              <p className="note-summary">{note.summary}</p>
+              <p className="note-summary"><ReactMarkdown>{note.summary}</ReactMarkdown></p>
               <div className="note-footer">
                 <span className="note-date">{note.date}</span>
                 {note.status === 'processing' && (

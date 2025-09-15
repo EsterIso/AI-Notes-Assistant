@@ -1,0 +1,292 @@
+/* Header */
+.header {
+    grid-area: header;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;        /* make it span full width */
+  z-index: 100;       /* keep it above other content */
+  background: rgba(15, 23, 42, 0.05);   /* subtle dark tint, adjust alpha */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Safari support */
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav {
+  margin: 0; /* Remove auto centering */
+  margin-left: 0; /* Align left to match sidebar */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.logo-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.nav-button {
+  padding: 0.5rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-button {
+  padding: .5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover, .user-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    min-width: 10rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(15, 23, 42, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.dropdown-actions {
+    padding: 0.75rem 1rem;
+    margin: 0.125rem 0;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.dropdown-actions:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    transform: translateX(2px);
+}
+
+/* Search Container */
+.search-container {
+    flex: 1;
+    max-width: 400px;
+    position: relative;
+    margin: 0 2rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 3rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: white;
+    font-size: 0.9rem;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.search-input:focus {
+    border-color: rgba(168, 85, 247, 0.5);
+    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.1);
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Header Actions */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.action-btn {
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.user-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.user-avatar:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+}
+
+/* Dropdown styles (keeping your existing ones) */
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    min-width: 10rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(15, 23, 42, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.dropdown-actions {
+    padding: 0.75rem 1rem;
+    margin: 0.125rem 0;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    border: none;
+    background: none;
+    text-align: left;
+    width: 100%;
+}
+
+.dropdown-actions:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    transform: translateX(2px);
+}
+
+/* Mobile toggle button */
+.mobile-toggle {
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: white;
+  display: none; 
+  transition: all 0.2s ease;
+}
+
+.mobile-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .top-header {
+        left: 0;
+        padding: 1rem;
+    }
+    
+    .search-container {
+        margin: 0 1rem;
+        max-width: none;
+    }
+
+     .mobile-toggle {
+        display: block;
+    }
+
+    .logo {
+        margin-left: 0.5rem;
+    }
+    
+    .logo-text {
+        display: none;
+    }
+}
+
+/* Desktop - hide toggle button */
+@media (min-width: 769px) {
+    .mobile-toggle {
+        display: none !important;
+    }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Test with Auth</title>
+</head>
+<body>
+    <h1>Test Your APIs</h1>
+    
+    <h2>1. Login First</h2>
+    <button onclick="testLogin()">Login</button>
+    <div id="loginResult"></div>
+    
+    <h2>2. Test Notes (requires login)</h2>
+    <button onclick="testNotes()">Get Notes</button>
+    <div id="notesResult"></div>
+
+    <script>
+    let authToken = null;
+
+    function testLogin() {
+        fetch('/api/users/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                email: 'test@example.com', 
+                password: 'TestPass123!'
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById('loginResult').innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+            if (data.success && data.token) {
+                authToken = data.token;
+                alert('Login successful! Token saved.');
+            }
+        })
+        .catch(err => {
+            document.getElementById('loginResult').innerHTML = 'Error: ' + err.message;
+        });
+    }
+
+    function testNotes() {
+        if (!authToken) {
+            alert('Please login first to get a token!');
+            return;
+        }
+
+        fetch('/api/notes', {
+            method: 'GET',
+            headers: { 
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + authToken
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById('notesResult').innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+        })
+        .catch(err => {
+            document.getElementById('notesResult').innerHTML = 'Error: ' + err.message;
+        });
+    }
+    </script>
+</body>
+</html>

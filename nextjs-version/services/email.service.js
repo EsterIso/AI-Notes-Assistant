@@ -223,20 +223,16 @@ getWelcomeEmailTemplate(username, companyName = 'StudyAI') {
               font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
               line-height: 1.6;
               color: #333;
-              background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
-              min-height: 100vh;
-              padding: 20px;
+              background-color: #f4f4f4;
           }
           
           .email-container {
               max-width: 600px;
               margin: 0 auto;
-              background: rgba(255, 255, 255, 0.1);
-              backdrop-filter: blur(12px);
-              border: 1px solid rgba(255, 255, 255, 0.2);
-              border-radius: 16px;
+              background-color: #ffffff;
+              border-radius: 12px;
               overflow: hidden;
-              box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
           }
           
           .header {
@@ -265,13 +261,13 @@ getWelcomeEmailTemplate(username, companyName = 'StudyAI') {
           .greeting {
               font-size: 24px;
               font-weight: 600;
-              color: #ffffff;
+              color: #2d3748;
               margin-bottom: 20px;
           }
           
           .message {
               font-size: 16px;
-              color: rgba(255, 255, 255, 0.9);
+              color: #4a5568;
               margin-bottom: 30px;
               line-height: 1.6;
           }

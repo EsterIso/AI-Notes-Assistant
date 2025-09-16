@@ -222,8 +222,8 @@ getWelcomeEmailTemplate(username, companyName = 'StudyAI') {
           body {
               font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
               line-height: 1.6;
-              color: #ffffff;
-              background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+              color: #333;
+              background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
               min-height: 100vh;
               padding: 20px;
           }
@@ -231,15 +231,16 @@ getWelcomeEmailTemplate(username, companyName = 'StudyAI') {
           .email-container {
               max-width: 600px;
               margin: 0 auto;
-              background: rgba(255, 255, 255, 0.05);
+              background: rgba(255, 255, 255, 0.1);
               backdrop-filter: blur(12px);
-              border: 1px solid rgba(255, 255, 255, 0.1);
+              border: 1px solid rgba(255, 255, 255, 0.2);
               border-radius: 16px;
               overflow: hidden;
+              box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
           }
           
           .header {
-              background: linear-gradient(to right, #a855f7, #ec4899);
+              background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
               padding: 40px 30px;
               text-align: center;
               color: white;
@@ -249,6 +250,12 @@ getWelcomeEmailTemplate(username, companyName = 'StudyAI') {
               font-size: 32px;
               font-weight: 700;
               margin-bottom: 10px;
+              text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+          }
+          
+          .header-subtitle {
+              font-size: 16px;
+              opacity: 0.9;
           }
           
           .content {
@@ -264,7 +271,7 @@ getWelcomeEmailTemplate(username, companyName = 'StudyAI') {
           
           .message {
               font-size: 16px;
-              color: rgba(255, 255, 255, 0.7);
+              color: rgba(255, 255, 255, 0.9);
               margin-bottom: 30px;
               line-height: 1.6;
           }
@@ -279,9 +286,10 @@ getWelcomeEmailTemplate(username, companyName = 'StudyAI') {
               gap: 12px;
               margin-bottom: 16px;
               padding: 16px;
-              background: rgba(255, 255, 255, 0.05);
+              background: rgba(255, 255, 255, 0.1);
+              backdrop-filter: blur(8px);
               border-radius: 12px;
-              border: 1px solid rgba(255, 255, 255, 0.1);
+              border: 1px solid rgba(255, 255, 255, 0.2);
           }
           
           .feature-icon {
@@ -289,7 +297,11 @@ getWelcomeEmailTemplate(username, companyName = 'StudyAI') {
           }
           
           .feature-text {
-              color: rgba(255, 255, 255, 0.7);
+              color: rgba(255, 255, 255, 0.9);
+          }
+          
+          .feature-text strong {
+              color: #ffffff;
           }
           
           .button-container {
@@ -299,7 +311,7 @@ getWelcomeEmailTemplate(username, companyName = 'StudyAI') {
           
           .cta-button {
               display: inline-block;
-              background: linear-gradient(to right, #a855f7, #ec4899);
+              background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
               color: white;
               text-decoration: none;
               padding: 16px 40px;
@@ -307,11 +319,29 @@ getWelcomeEmailTemplate(username, companyName = 'StudyAI') {
               font-weight: 600;
               font-size: 16px;
               text-align: center;
+              box-shadow: 0 4px 20px rgba(168, 85, 247, 0.4);
               transition: all 0.3s ease;
+          }
+          
+          .info-box {
+              background: rgba(255, 255, 255, 0.1);
+              backdrop-filter: blur(8px);
+              border: 1px solid rgba(255, 255, 255, 0.2);
+              border-left: 4px solid #a855f7;
+              padding: 20px;
+              margin: 30px 0;
+              border-radius: 0 12px 12px 0;
+          }
+          
+          .info-box p {
+              font-size: 16px;
+              color: rgba(255, 255, 255, 0.9);
+              margin: 0;
           }
           
           .footer {
               background: rgba(255, 255, 255, 0.05);
+              backdrop-filter: blur(8px);
               padding: 30px;
               text-align: center;
               border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -319,8 +349,32 @@ getWelcomeEmailTemplate(username, companyName = 'StudyAI') {
           
           .footer-content {
               font-size: 14px;
-              color: rgba(255, 255, 255, 0.5);
+              color: rgba(255, 255, 255, 0.7);
               line-height: 1.5;
+          }
+          
+          @media only screen and (max-width: 600px) {
+              .email-container {
+                  margin: 0;
+                  border-radius: 0;
+              }
+              
+              .header, .content, .footer {
+                  padding: 25px 20px;
+              }
+              
+              .greeting {
+                  font-size: 20px;
+              }
+              
+              .cta-button {
+                  padding: 14px 30px;
+                  font-size: 15px;
+              }
+              
+              .feature-item {
+                  padding: 12px;
+              }
           }
       </style>
   </head>
@@ -328,11 +382,11 @@ getWelcomeEmailTemplate(username, companyName = 'StudyAI') {
       <div class="email-container">
           <div class="header">
               <div class="logo">${companyName}</div>
-              <div style="font-size: 16px; opacity: 0.9;">🎉 Welcome aboard!</div>
+              <div class="header-subtitle">🎉 Welcome aboard!</div>
           </div>
           
           <div class="content">
-              <h1 class="greeting">Hi ${username}!</h1>
+              <h1 class="greeting">Hi ${username}! 👋</h1>
               
               <div class="message">
                   <p>Your email is now verified and you're ready to supercharge your studying with AI! Upload any PDF or text document and let our AI create:</p>
@@ -368,7 +422,7 @@ getWelcomeEmailTemplate(username, companyName = 'StudyAI') {
                   </a>
               </div>
               
-              <div class="message">
+              <div class="info-box">
                   <p>Ready to transform how you study? Upload your first document and experience the power of AI-assisted learning!</p>
               </div>
           </div>

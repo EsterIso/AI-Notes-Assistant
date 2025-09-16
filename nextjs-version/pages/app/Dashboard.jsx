@@ -90,7 +90,7 @@ function Dashboard() {
           <input
             type="file"
             style={{ display: "none" }}
-            accept=".pdf"
+            accept=".pdf, .docx, .txt, .md"
             disabled={loading}
             onChange={(e) => {
               const file = e.target.files[0];

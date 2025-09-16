@@ -1,5 +1,5 @@
 import { connectDB } from '../../../lib/mongodb.js';
-import { verifyEmail } from '../../../utils/user.controller.js';
+import { verifyEmail } from '@/utils/user.controller.js';
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') {

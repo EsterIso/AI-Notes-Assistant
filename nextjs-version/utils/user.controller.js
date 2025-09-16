@@ -1,4 +1,5 @@
 import User from '../models/user.model.js';
+import Note from '../models/notes.model.js'
 import emailService from '@/services/email.service.js';
 import jwt from 'jsonwebtoken';
 
@@ -254,7 +255,7 @@ export const loginUser = async (req, res) => {
                 id: user._id,
                 username: user.username,
                 email: user.email,
-                isEmailVerified: user.isEmailVerified // 🆕 Include verification status
+                isEmailVerified: user.isEmailVerified // Include verification status
             }
         });
     } catch (error) {
@@ -356,8 +357,9 @@ export const deleteUser = async (req, res) => {
             return res.status(404).json({ success: false, message: 'User not found' });
         }
 
+        await Note.deleteMany({ userId: req.user.id})
         await User.findByIdAndDelete(req.user.id);
-
+        
         res.json({ success: true, message: 'User account deleted successfully' });
     } catch (error) {
         res.status(500).json({ success: false, message: 'Error deleting user account', error: error.message });

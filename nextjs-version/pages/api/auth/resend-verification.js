@@ -1,4 +1,4 @@
-import { connectDB } from '../../../lib/mongodb.js';
+import { connectDB } from '@/lib/mongodb'; 
 import { resendVerificationEmail } from '@/utils/user.controller.js'; 
 
 export default async function handler(req, res) {

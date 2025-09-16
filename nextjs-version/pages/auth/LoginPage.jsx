@@ -3,6 +3,7 @@ import PublicHeader from '../../components/layout/PublicHeader';
 import useLoginForm from "../../hooks/useLoginForm"
 import FormInput from '../../components/form/FormInput';
 import EmailVerificationRequired from '@/components/layout/EmailVerificationRequired';
+import { toast } from 'react-toastify';
 
 function LoginPage() {
 

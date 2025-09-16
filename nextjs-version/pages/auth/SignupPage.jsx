@@ -4,6 +4,7 @@ import PasswordRequirements from '../../components/form/PasswordRequirements';
 import useSignupForm from '../../hooks/useSignupForm';
 import FormInput from '../../components/form/FormInput';
 import EmailVerificationRequired from '@/components/layout/EmailVerificationRequired';
+import { toast } from 'react-toastify';
 
 function SignupPage() {
   const { 

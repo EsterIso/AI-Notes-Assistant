@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
+import crypto from 'crypto'; // Add this import
 
 const userSchema = new mongoose.Schema(
   {
@@ -34,6 +35,20 @@ const userSchema = new mongoose.Schema(
         message: 'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character'
       }
     },
+    
+    isEmailVerified: {
+      type: Boolean,
+      default: false
+    },
+    emailVerificationToken: {
+      type: String,
+      default: null
+    },
+    emailVerificationExpires: {
+      type: Date,
+      default: null
+    },
+    
     lastLogin: {
       type: Date,
       default: Date.now
@@ -71,12 +86,45 @@ userSchema.methods.comparePassword = async function(candidatePassword) {
   return bcrypt.compare(candidatePassword, this.password);
 };
 
+// GENERATE EMAIL VERIFICATION TOKEN
+userSchema.methods.generateEmailVerificationToken = function() {
+  // Generate random token
+  const token = crypto.randomBytes(32).toString('hex');
+  
+  // Hash the token and store it
+  this.emailVerificationToken = crypto.createHash('sha256').update(token).digest('hex');
+  
+  // Set expiration (24 hours from now)
+  this.emailVerificationExpires = Date.now() + 24 * 60 * 60 * 1000;
+  
+  // Return the unhashed token (this will be sent in email)
+  return token;
+};
+
+// VERIFY EMAIL TOKEN
+userSchema.methods.verifyEmailToken = function(token) {
+  // Hash the provided token
+  const hashedToken = crypto.createHash('sha256').update(token).digest('hex');
+  
+  // Check if token matches and hasn't expired
+  return this.emailVerificationToken === hashedToken && 
+         this.emailVerificationExpires > Date.now();
+};
+
+// 🆕 MARK EMAIL AS VERIFIED
+userSchema.methods.markEmailAsVerified = function() {
+  this.isEmailVerified = true;
+  this.emailVerificationToken = null;
+  this.emailVerificationExpires = null;
+};
+
 // Hide sensitive fields in JSON
 userSchema.set('toJSON', {
   virtuals: true,
   versionKey: false,
   transform: (doc, ret) => {
     delete ret.password;
+    delete ret.emailVerificationToken; 
     return ret;
   }
 });

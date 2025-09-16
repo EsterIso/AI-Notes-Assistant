@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { loginUser } from '../services/authService'
+import { loginUser } from '../services/auth.service'
 import { useAuth } from '../context/AuthContext';
 import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
@@ -11,9 +11,12 @@ function useLoginForm() {
     });
 
     const [errors, setErrors] = useState({});
+    
+    // email verification state
+    const [showVerificationRequired, setShowVerificationRequired] = useState(false);
+    const [unverifiedEmail, setUnverifiedEmail] = useState('');
 
     const { login } = useAuth();
-
     const router = useRouter();
 
     const handleInputChange = (e) => {
@@ -29,7 +32,6 @@ function useLoginForm() {
         e.preventDefault();
 
         try {
-
             const response = await loginUser({
                 email: loginData.email,
                 password: loginData.password
@@ -42,12 +44,18 @@ function useLoginForm() {
                 return;
             }
 
-            const { success, message, token } = response;
+            const { success, message, token, needsEmailVerification, email } = response;
+            
             if (success) {
-                // reminder to redirect to user homepage
+                // Successful login
                 toast.success(message || 'Welcome back! Login successful.');
                 login(response.token, response.user)
                 router.push('/');
+            } else if (needsEmailVerification) {
+                // Handle email verification required
+                setUnverifiedEmail(email || loginData.email);
+                setShowVerificationRequired(true);
+                toast.error(message || 'Please verify your email before logging in');
             } else {
                 // Handle error messages from the server
                 if (typeof message === 'object') {
@@ -74,11 +82,21 @@ function useLoginForm() {
         }
     };
 
+    // Function to go back to login form
+    const goBackToLogin = () => {
+        setShowVerificationRequired(false);
+        setUnverifiedEmail('');
+        setErrors({});
+    };
+
     return{
         loginData,
         handleInputChange,
         handleSubmit,
-        errors
+        errors,
+        showVerificationRequired,
+        unverifiedEmail,
+        goBackToLogin
     }
 }
 

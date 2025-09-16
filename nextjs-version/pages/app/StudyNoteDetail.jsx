@@ -14,7 +14,7 @@ import {
     CheckSquare
 } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
-import { getNoteById, deleteNote as apiDeleteNote } from '../../services/noteService.js';
+import { getNoteById, deleteNote as apiDeleteNote } from '../../services/note.service.js';
 import Flashcard from '../../components/layout/Flashcard';
 import Quiz from '../../components/layout/Quiz';
 

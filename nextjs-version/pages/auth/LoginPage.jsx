@@ -2,10 +2,31 @@ import { useState } from 'react';
 import PublicHeader from '../../components/layout/PublicHeader';
 import useLoginForm from "../../hooks/useLoginForm"
 import FormInput from '../../components/form/FormInput';
+import EmailVerificationRequired from '@/components/layout/EmailVerificationRequired';
 
 function LoginPage() {
 
-  const { loginData, handleInputChange, handleSubmit, errors } = useLoginForm();
+  const { 
+    loginData, 
+    handleInputChange, 
+    handleSubmit, 
+    errors,
+    showVerificationRequired,
+    unverifiedEmail,
+    goBackToLogin
+  } = useLoginForm();
+
+if (showVerificationRequired) {
+    return (
+      <EmailVerificationRequired 
+        email={unverifiedEmail}
+        onResendSuccess={() => {
+          toast.success('Verification email sent!');
+        }}
+      />
+    );
+  }
+
 
   return (
     

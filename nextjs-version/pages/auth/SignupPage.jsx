@@ -3,11 +3,32 @@ import PublicHeader from '../../components/layout/PublicHeader';
 import PasswordRequirements from '../../components/form/PasswordRequirements';
 import useSignupForm from '../../hooks/useSignupForm';
 import FormInput from '../../components/form/FormInput';
+import EmailVerificationRequired from '@/components/layout/EmailVerificationRequired';
 
 function SignupPage() {
+  const { 
+    formData, 
+    handleInputChange, 
+    handleSubmit, 
+    errors,
+    showVerificationRequired,
+    registeredEmail,
+    goBackToSignup
+  } = useSignupForm();
 
-  const { formData, handleInputChange, handleSubmit, errors } = useSignupForm();
+  // Show email verification screen if needed
+  if (showVerificationRequired) {
+    return (
+      <EmailVerificationRequired 
+        email={registeredEmail}
+        onResendSuccess={() => {
+        toast.success('Verification email sent!');
+        }}
+      />
+    );
+  }
 
+  // 🆕 Show regular signup form
   return (
     <div className="login-page-container">
       <div className="wave wave1"></div>
@@ -45,7 +66,6 @@ function SignupPage() {
               error={errors.password}
             />
             <PasswordRequirements formData={formData}/>
-              
 
             <FormInput 
               type='password'

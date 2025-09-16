@@ -11,7 +11,7 @@ import {
     Clock
 } from 'lucide-react';
 import { useRouter } from 'next/router';
-import { getNotes, deleteNote as apiDeleteNote } from '../../services/noteService.js';
+import { getNotes, deleteNote as apiDeleteNote } from '../../services/note.service.js';
 
 
 const StudyNotes = () => {

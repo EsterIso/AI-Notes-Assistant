@@ -5,7 +5,7 @@ import {
     createTextNote,
     updateNote, 
     deleteNote
-} from '../services/noteService';
+} from '../services/note.service';
 import { toast } from 'react-toastify';
 
 function useNotes() {

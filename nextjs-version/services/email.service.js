@@ -203,6 +203,188 @@ class EmailService {
     `;
   }
 
+  // Welcome email template
+getWelcomeEmailTemplate(username, companyName = 'StudyAI') {
+  return `
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Welcome to ${companyName}!</title>
+      <style>
+          * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+          }
+          
+          body {
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+              line-height: 1.6;
+              color: #ffffff;
+              background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+              min-height: 100vh;
+              padding: 20px;
+          }
+          
+          .email-container {
+              max-width: 600px;
+              margin: 0 auto;
+              background: rgba(255, 255, 255, 0.05);
+              backdrop-filter: blur(12px);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 16px;
+              overflow: hidden;
+          }
+          
+          .header {
+              background: linear-gradient(to right, #a855f7, #ec4899);
+              padding: 40px 30px;
+              text-align: center;
+              color: white;
+          }
+          
+          .logo {
+              font-size: 32px;
+              font-weight: 700;
+              margin-bottom: 10px;
+          }
+          
+          .content {
+              padding: 40px 30px;
+          }
+          
+          .greeting {
+              font-size: 24px;
+              font-weight: 600;
+              color: #ffffff;
+              margin-bottom: 20px;
+          }
+          
+          .message {
+              font-size: 16px;
+              color: rgba(255, 255, 255, 0.7);
+              margin-bottom: 30px;
+              line-height: 1.6;
+          }
+          
+          .features {
+              margin: 30px 0;
+          }
+          
+          .feature-item {
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              padding: 16px;
+              background: rgba(255, 255, 255, 0.05);
+              border-radius: 12px;
+              border: 1px solid rgba(255, 255, 255, 0.1);
+          }
+          
+          .feature-icon {
+              font-size: 24px;
+          }
+          
+          .feature-text {
+              color: rgba(255, 255, 255, 0.7);
+          }
+          
+          .button-container {
+              text-align: center;
+              margin: 30px 0;
+          }
+          
+          .cta-button {
+              display: inline-block;
+              background: linear-gradient(to right, #a855f7, #ec4899);
+              color: white;
+              text-decoration: none;
+              padding: 16px 40px;
+              border-radius: 12px;
+              font-weight: 600;
+              font-size: 16px;
+              text-align: center;
+              transition: all 0.3s ease;
+          }
+          
+          .footer {
+              background: rgba(255, 255, 255, 0.05);
+              padding: 30px;
+              text-align: center;
+              border-top: 1px solid rgba(255, 255, 255, 0.1);
+          }
+          
+          .footer-content {
+              font-size: 14px;
+              color: rgba(255, 255, 255, 0.5);
+              line-height: 1.5;
+          }
+      </style>
+  </head>
+  <body>
+      <div class="email-container">
+          <div class="header">
+              <div class="logo">${companyName}</div>
+              <div style="font-size: 16px; opacity: 0.9;">🎉 Welcome aboard!</div>
+          </div>
+          
+          <div class="content">
+              <h1 class="greeting">Hi ${username}!</h1>
+              
+              <div class="message">
+                  <p>Your email is now verified and you're ready to supercharge your studying with AI! Upload any PDF or text document and let our AI create:</p>
+              </div>
+              
+              <div class="features">
+                  <div class="feature-item">
+                      <span class="feature-icon">📝</span>
+                      <div class="feature-text">
+                          <strong>In-depth Summaries</strong><br>
+                          Get comprehensive, AI-generated summaries of your documents
+                      </div>
+                  </div>
+                  <div class="feature-item">
+                      <span class="feature-icon">🗂️</span>
+                      <div class="feature-text">
+                          <strong>Smart Flashcards</strong><br>
+                          Automatically generated flashcards for active recall learning
+                      </div>
+                  </div>
+                  <div class="feature-item">
+                      <span class="feature-icon">🧠</span>
+                      <div class="feature-text">
+                          <strong>Interactive Quizzes</strong><br>
+                          Test your knowledge with AI-created quizzes from your content
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="button-container">
+                  <a href="${process.env.FRONTEND_URL}/dashboard" class="cta-button">
+                      Start Studying Now
+                  </a>
+              </div>
+              
+              <div class="message">
+                  <p>Ready to transform how you study? Upload your first document and experience the power of AI-assisted learning!</p>
+              </div>
+          </div>
+          
+          <div class="footer">
+              <div class="footer-content">
+                  <p>© ${new Date().getFullYear()} ${companyName}. All rights reserved.</p>
+                  <p>Need help? Contact us at support@${companyName.toLowerCase()}.com</p>
+              </div>
+          </div>
+      </div>
+  </body>
+  </html>
+  `;
+}
+
   // Send verification email
   async sendVerificationEmail(user, verificationToken) {
     try {

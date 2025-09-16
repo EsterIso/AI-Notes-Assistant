@@ -351,7 +351,7 @@ export const changePassword = async (req, res) => {
 // Delete user account 
 export const deleteUser = async (req, res) => {
     try {
-        const user = await User.findById(req.user.userId);
+        const user = await User.findById(req.user.id);
         if (!user) {
             return res.status(404).json({ success: false, message: 'User not found' });
         }

@@ -89,8 +89,6 @@ function Sidebar({ isSidebarOpen, setIsSidebarOpen }) {
             title: "AI Generated",
             items: [
                 { icon: Clipboard, label: "Study Notes", path: "/study-notes" },
-                { icon: Target, label: "Flashcards", path: "/flashcards" },
-                { icon: HelpCircle, label: "Quiz Questions", path: "/quizzes" }
             ]
         },
         {

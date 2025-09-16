@@ -39,7 +39,7 @@ function AppLayout({ children }) {  // Change: Accept children prop instead of u
       />
 
       <main className="content">
-        {children}  {/* Change: Render children instead of Outlet */}
+        {children}
       </main>
     </div>
   );

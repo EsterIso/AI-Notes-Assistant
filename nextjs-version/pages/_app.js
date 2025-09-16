@@ -8,6 +8,7 @@ import '../styles/Header.css';
 import '../styles/HomePage.css';
 import '../styles/LoginPage.css';
 import '../styles/Sidebar.css';
+import '../styles/Settings.css';
 
 export default function MyApp({ Component, pageProps }) {
   return (

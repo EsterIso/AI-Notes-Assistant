@@ -15,7 +15,7 @@ const noteSchema = new mongoose.Schema(
 
     inputType: {
       type: String,
-      enum: ["text", "audio", "pdf"],
+      enum: ["text", "audio", "pdf", "docx", "md"],
       required: true,
     },
 

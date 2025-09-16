@@ -1,6 +1,7 @@
 import OpenAI from "openai";
 import 'dotenv/config';
 import { extractTextFromPDF, chunkText } from './pdf.service.js';
+import { extractTextFromDOCX } from './docx.service.js'; // You'll need to create this
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -35,30 +36,39 @@ export const processNoteWithAI = async (originalContent, inputType) => {
         }
 
         // Process based on text length
-        if (fullText.length < 12000) { // ~3k tokens
-          textToProcess = fullText;
-          console.log('Processing PDF directly (small size)');
-        } else {
-          // Chunk the text and process each chunk
-          const chunks = chunkText(fullText, 3000);
-          console.log(`Processing ${chunks.length} chunks from PDF`);
-          
-          textToProcess = "";
-          for (let i = 0; i < chunks.length; i++) {
-            console.log(`Processing chunk ${i + 1}/${chunks.length}`);
-            
-            const chunkSummary = await callOpenAI(
-              `Summarize and extract key information from this text chunk. Keep important details but make it more concise:\n\n${chunks[i]}`
-            );
-            textToProcess += chunkSummary + "\n\n";
-          }
-        }
+        textToProcess = await processLongText(fullText);
       } catch (pdfError) {
         console.error('PDF processing error:', pdfError);
         throw new Error(`PDF processing failed: ${pdfError.message}`);
       }
+    } else if (inputType === "docx") {
+      if (!originalContent.base64) {
+        throw new Error("No DOCX content provided - base64 property missing");
+      }
+
+      console.log('Processing DOCX, Base64 length:', originalContent.base64.length);
+      
+      try {
+        // Decode base64 to buffer
+        const buffer = Buffer.from(originalContent.base64, "base64");
+        console.log('DOCX Buffer created, length:', buffer.length);
+        
+        // Extract text from DOCX
+        const fullText = await extractTextFromDOCX(buffer);
+        console.log('Extracted DOCX text length:', fullText.length);
+        
+        if (!fullText.trim()) {
+          throw new Error("No text could be extracted from DOCX - the document might be empty or corrupted");
+        }
+
+        // Process based on text length
+        textToProcess = await processLongText(fullText);
+      } catch (docxError) {
+        console.error('DOCX processing error:', docxError);
+        throw new Error(`DOCX processing failed: ${docxError.message}`);
+      }
     } else {
-      throw new Error(`Unsupported inputType: ${inputType}`);
+      throw new Error(`Unsupported inputType: ${inputType}. Supported types: text, pdf, docx`);
     }
 
     if (!textToProcess.trim()) {
@@ -163,7 +173,6 @@ export const processNoteWithAI = async (originalContent, inputType) => {
       { format: "json-array" }
     );
 
-
     console.log('Generating action items...');
     outputs.actionItems = await callOpenAI(
       `Extract specific, actionable items, tasks, or next steps from this content. Return a JSON array of strings. If none exist, return an empty array:\n\n${textToProcess}\n\nReturn only valid JSON array:`,
@@ -175,6 +184,29 @@ export const processNoteWithAI = async (originalContent, inputType) => {
   } catch (error) {
     console.error("AI processing failed:", error);
     throw new Error(`AI processing failed: ${error.message}`);
+  }
+};
+
+// Helper function to process long text (extracted from duplicate code)
+const processLongText = async (fullText) => {
+  if (fullText.length < 12000) { // ~3k tokens
+    console.log('Processing document directly (small size)');
+    return fullText;
+  } else {
+    // Chunk the text and process each chunk
+    const chunks = chunkText(fullText, 3000);
+    console.log(`Processing ${chunks.length} chunks from document`);
+    
+    let processedText = "";
+    for (let i = 0; i < chunks.length; i++) {
+      console.log(`Processing chunk ${i + 1}/${chunks.length}`);
+      
+      const chunkSummary = await callOpenAI(
+        `Summarize and extract key information from this text chunk. Keep important details but make it more concise:\n\n${chunks[i]}`
+      );
+      processedText += chunkSummary + "\n\n";
+    }
+    return processedText;
   }
 };
 

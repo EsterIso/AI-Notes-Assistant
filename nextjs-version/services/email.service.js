@@ -292,14 +292,6 @@ getWelcomeEmailTemplate(username, companyName = 'StudyAI') {
               font-size: 24px;
           }
           
-          .feature-text {
-              color: rgba(255, 255, 255, 0.9);
-          }
-          
-          .feature-text strong {
-              color: #ffffff;
-          }
-          
           .button-container {
               text-align: center;
               margin: 30px 0;
@@ -331,7 +323,6 @@ getWelcomeEmailTemplate(username, companyName = 'StudyAI') {
           
           .info-box p {
               font-size: 16px;
-              color: rgba(255, 255, 255, 0.9);
               margin: 0;
           }
           
@@ -345,7 +336,6 @@ getWelcomeEmailTemplate(username, companyName = 'StudyAI') {
           
           .footer-content {
               font-size: 14px;
-              color: rgba(255, 255, 255, 0.7);
               line-height: 1.5;
           }
           

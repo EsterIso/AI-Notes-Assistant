@@ -1,7 +1,6 @@
 import Note from '../models/notes.model.js';
 import { processNoteWithAI } from '../services/ai.service.js';
 
-
 export const createNote = async (req, res) => {
   try {
     const { title, inputType, originalContent } = req.body;
@@ -27,18 +26,31 @@ export const createNote = async (req, res) => {
       });
     }
 
-    // Save note to MongoDB (assuming Note model is imported)
+    // Calculate metadata
+    const metadata = { 
+      status: 'processed',
+      processedAt: new Date()
+    };
+
+    // Add word count for text content
+    if (inputType === 'text' && originalContent.text) {
+      metadata.wordCount = originalContent.text.split(/\s+/).filter(word => word.length > 0).length;
+    }
+
+    // Add file metadata for file uploads
+    if (originalContent.fileName) {
+      metadata.fileName = originalContent.fileName;
+      metadata.fileSize = originalContent.fileSize;
+    }
+
+    // Save note to MongoDB
     const note = new Note({
       userId: req.user.userId,
       title,
       inputType,
       originalContent,
       aiOutputs,
-      metadata: { 
-        status: 'processed',
-        processedAt: new Date(),
-        wordCount: inputType === 'text' ? originalContent.text?.split(' ').length : null
-      }
+      metadata
     });
 
     const savedNote = await note.save();
@@ -144,6 +156,22 @@ export const updateNote = async (req, res) => {
             success: false, 
             message: 'Error updating note', 
             error: error.message 
+        });
+    }
+};
+
+// Get supported file types endpoint (optional, for frontend reference)
+export const getSupportedFileTypes = async (req, res) => {
+    try {
+        res.json({
+            success: true,
+            supportedTypes: SUPPORTED_FILE_TYPES
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: 'Error fetching supported file types',
+            error: error.message
         });
     }
 };

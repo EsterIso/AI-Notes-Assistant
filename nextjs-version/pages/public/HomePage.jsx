@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { 
   FileText, 
-  Mic, 
   Upload, 
   Brain, 
   Zap, 
@@ -11,13 +10,20 @@ import {
   Play,
   Sparkles,
   Clock,
-  Users
+  Users,
+  Type
 } from 'lucide-react';
 import PublicHeader from '../../components/layout/PublicHeader.jsx';
+import { useRouter } from 'next/router.js';
 
 
 export default function HomePage() {
   const [hoveredCard, setHoveredCard] = useState(null);
+
+  const router = useRouter();
+  const handleLogin = () => {
+        router.push('/login')
+    };
 
   const features = [
     {
@@ -27,13 +33,13 @@ export default function HomePage() {
       iconClass: "feature-icon-blue"
     },
     {
-      icon: <Mic className="w-8 h-8" />,
-      title: "Audio Processing",
-      description: "Convert lecture recordings into comprehensive notes and study guides",
+      icon: <Upload className="w-8 h-8" />,
+      title: "File Processing",
+      description: "Support for various document formats to create comprehensive study guides",
       iconClass: "feature-icon-purple"
     },
     {
-      icon: <FileText className="w-8 h-8" />,
+      icon: <Type className="w-8 h-8" />,
       title: "Text Analysis",
       description: "Paste any text content and generate personalized learning materials",
       iconClass: "feature-icon-emerald"
@@ -56,7 +62,7 @@ export default function HomePage() {
         <div className="hero-content">
           <div className="hero-badge">
             <Sparkles className="w-4 h-4" />
-            <span>Powered by Advanced AI</span>
+            <span>Powered by OpenAI</span>
           </div>
           
           <h1 className="hero-title">
@@ -67,12 +73,12 @@ export default function HomePage() {
           </h1>
           
           <p className="hero-description">
-            Upload PDFs, audio recordings, or text content and let our AI create personalized notes, 
+            Upload PDFs, documents, or text content and let our AI create personalized notes, 
             flashcards, and quiz questions tailored to your learning style.
           </p>
 
           <div className="hero-buttons">
-            <button className="hero-primary-button">
+            <button className="hero-primary-button" onClick={handleLogin}>
               <span>Start Learning</span>
               <ArrowRight className="w-5 h-5 icon-transition" />
             </button>
@@ -177,7 +183,7 @@ export default function HomePage() {
             <p className="cta-description">
               Join thousands of students who have transformed their learning experience with AI-powered study tools.
             </p>
-            <button className="cta-button">
+            <button className="cta-button" onClick={handleLogin}>
               <span>Get Started Free</span>
               <ArrowRight className="w-5 h-5 icon-transition" />
             </button>

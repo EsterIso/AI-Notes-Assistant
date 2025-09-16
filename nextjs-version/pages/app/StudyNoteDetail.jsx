@@ -78,6 +78,7 @@ const StudyNoteDetail = () => {
     const getTypeIcon = (inputType) => {
         switch(inputType) {
             case 'pdf': return <FileText className="type-icon pdf" size={20} />;
+            case 'docx': return <FileText className="type-icon docx" size={20} />;
             case 'text': return <BookOpen className="type-icon text" size={20} />;
             default: return <FileText className="type-icon" size={20} />;
         }

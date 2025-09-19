@@ -32,7 +32,7 @@ function Dashboard() {
   };
 
   const handleNoteClick = (noteId) => {
-    router.push(`/notes/${noteId}`);
+    router.push(`/study-notes/${noteId}`);
   };
 
   if (loading && recentNotes.length === 0) {

@@ -2,6 +2,14 @@ import { connectDB } from '../../../lib/mongodb.js';
 import { createNote, getNotes } from '../../../utils/notes.controller.js';
 import { protect } from '../../../middleware/auth.middleware.js';
 
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: '50mb',
+    },
+  },
+}
+
 // Helper to run middleware
 const runMiddleware = (req, res, fn) => {
   return new Promise((resolve, reject) => {

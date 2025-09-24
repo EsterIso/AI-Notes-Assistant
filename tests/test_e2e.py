@@ -87,7 +87,7 @@ class SingupTest:
     def checkSuccess(self, testNumber):
         version = self.get_latest_git_tag()
 
-        screenshot_folder = os.path.join('scrrenshots', version)
+        screenshot_folder = os.path.join('screenshots', version)
         os.makedirs(screenshot_folder, exist_ok=True)
 
         try:

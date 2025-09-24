@@ -26,9 +26,10 @@ function FormError(formData) {
     if (!confirmPassword || confirmPassword !== password) {
         newErrors.confirmPassword = 'Must match the Password above';
     }
-
+    
+    const errorMessage = Object.values(newErrors).join(', ');
     // Return true if no errors (form is valid)
-    return Object.keys(newErrors).length === 0;
+    return [Object.keys(newErrors).length === 0, errorMessage];
 }
 
 export default FormError;

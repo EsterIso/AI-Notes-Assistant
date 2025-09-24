@@ -39,7 +39,7 @@ function SignupPage() {
       <div className="content-area">
         <div className="signup-form-container">
           <h2 className="signup-title">Sign Up</h2>
-          <form className="signup-form" onSubmit={handleSubmit}>
+          <form className="signup-form" onSubmit={handleSubmit} noValidate>
             <FormInput
               type='username'
               name='username'

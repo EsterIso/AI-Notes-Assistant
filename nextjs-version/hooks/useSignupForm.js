@@ -34,7 +34,8 @@ function useSignupForm() {
       setErrors({});
       
       const isValid = FormError(formData);
-      if (!isValid) {
+      if (isValid[0] === false) {
+          toast.error(isValid[1]);
           return;
       }
 
@@ -53,7 +54,6 @@ function useSignupForm() {
         }
 
         const { success, message, requiresEmailVerification } = response;
-        
         if (success) {
           // Check if email verification is required
           if (requiresEmailVerification) {
@@ -62,7 +62,6 @@ function useSignupForm() {
             setShowVerificationRequired(true);
             toast.success(message || 'Account created! Please check your email to verify.');
           } else {
-            // Old flow - direct redirect (fallback)
             toast.success(message || 'Signup Successful!');
             router.push('/login');
           }

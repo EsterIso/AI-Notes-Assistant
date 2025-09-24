@@ -1,0 +1,17 @@
+username,email,password,confirm_password,test_case,expected_result
+validuser123,esterlin161@gmail.com,Password123!,Password123!,valid_complete,should_succeed
+ab,invalid-email-format,ValidPass1!,ValidPass1!,username_too_short,should_fail_username
+thisusernameistoolong123,invalid-email-format,GoodPassword2$,GoodPassword2$,username_too_long,should_fail_username
+normaluser,invalid-email,TestPass3%,TestPass3%,invalid_email_format,should_fail_email
+gooduser,esterlin161@,SecurePass4&,SecurePass4&,email_missing_domain,should_fail_email
+testuser2,esterlin161@gmail,Password5*,Password5*,email_missing_tld,should_fail_email
+user123,@gmail.com,MyPassword6!,MyPassword6!,email_missing_username,should_fail_email
+validuser,valid-email@test.com,short1!,short1!,password_too_short,should_fail_password
+testcase,valid-email2@test.com,nouppercase8!,nouppercase8!,password_no_uppercase,should_fail_password
+example,valid-email3@test.com,NOLOWERCASE9!,NOLOWERCASE9!,password_no_lowercase,should_fail_password
+demo,valid-email4@test.com,NoNumbers!,NoNumbers!,password_no_number,should_fail_password
+sample,valid-email5@test.com,NoSpecial123,NoSpecial123,password_no_special_char,should_fail_password
+user456,valid-email6@test.com,ValidPass7@,DifferentPass8#,password_mismatch,should_fail_password_match
+test.user,valid-email7@test.com,TestDot2%,TestDot2%,valid_with_dot,should_succeed_if_first_fails
+user-name,valid-email8@test.com,Hyphen3&,Hyphen3&,valid_with_hyphen,should_succeed_if_first_fails
+user_underscore,valid-email9@test.com,Under4*,Under4*,valid_with_underscore,should_succeed_if_first_fails

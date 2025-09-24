@@ -86,19 +86,19 @@ The original implementation using traditional MERN (MongoDB, Express, React, Nod
    
    # Authentication
    JWT_SECRET=your_jwt_secret_key
-   NEXTAUTH_SECRET=your_nextauth_secret
    
-   # Email Service
-   EMAIL_USER=your_email_service_user
-   EMAIL_PASS=your_email_service_password
-   EMAIL_FROM=noreply@yourapp.com
+   # Email Service (Gmail App Password recommended)
+   EMAIL_USER=your_app_email@gmail.com
+   EMAIL_PASSWORD=your_gmail_app_password
    
    # AI Service
-   AI_API_KEY=your_ai_api_key
-   AI_SERVICE_URL=your_ai_service_endpoint
+   OPENAI_API_KEY=your_openai_api_key
    
    # App Configuration
+   NEXT_PUBLIC_API_URL=/api
    NEXT_PUBLIC_APP_URL=http://localhost:3000
+   COMPANY_NAME=StudyAI
+   FRONTEND_URL=http://localhost:3000
    ```
 
 5. **Start the development server:**
@@ -237,12 +237,15 @@ vercel deploy
 - No separate backend hosting required
 
 ### Environment Variables for Production
-Ensure all environment variables are configured in your deployment platform:
-- Database connection strings
-- AI service API keys
-- JWT secrets
-- Email service credentials
-- File upload configurations
+Configure these environment variables in your Vercel dashboard:
+- **MONGODB_URI** - Your MongoDB Atlas connection string
+- **JWT_SECRET** - Secret key for JWT token signing
+- **OPENAI_API_KEY** - OpenAI API key for AI content generation
+- **EMAIL_USER** - Gmail address for sending emails (e.g., studyai.noreply@gmail.com)
+- **EMAIL_PASSWORD** - Gmail App Password (not your regular Gmail password)
+- **COMPANY_NAME** - Your application name (e.g., StudyAI)
+- **NEXT_PUBLIC_API_URL** - API endpoint path (use `/api` for Next.js)
+- **FRONTEND_URL** - Your production domain URL
 
 ## Quality Assurance
 

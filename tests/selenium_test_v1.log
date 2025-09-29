@@ -1,0 +1,843 @@
+2025-09-29 19:00:16,392 - INFO - ============================================================
+2025-09-29 19:00:16,392 - INFO - STARTING CROSS-BROWSER SIGNUP TESTS
+2025-09-29 19:00:16,392 - INFO - ============================================================
+2025-09-29 19:00:16,392 - INFO - 
+============================================================
+2025-09-29 19:00:16,392 - INFO - TESTING WITH CHROME
+2025-09-29 19:00:16,392 - INFO - ============================================================
+2025-09-29 19:00:17,431 - INFO - Loaded 16 test cases from test_data/registerData.csv
+2025-09-29 19:00:17,431 - INFO - Initialized CHROME browser for testing
+2025-09-29 19:00:17,431 - INFO - [chrome] === Running Test Case 1 ===
+2025-09-29 19:00:17,831 - INFO - [chrome] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:00:17,869 - INFO - [chrome] Clearing the Username Field
+2025-09-29 19:00:17,902 - INFO - [chrome] Sending Keys "validuser123" to Username Field
+2025-09-29 19:00:17,918 - INFO - [chrome] Clearing the Email Field
+2025-09-29 19:00:17,951 - INFO - [chrome] Sending Keys "esterlin161@gmail.com" to Email Field
+2025-09-29 19:00:17,975 - INFO - [chrome] Clearing the Password Field
+2025-09-29 19:00:17,998 - INFO - [chrome] Sending Keys to Password Field
+2025-09-29 19:00:18,014 - INFO - [chrome] Clearing the Confirm Password Field
+2025-09-29 19:00:18,035 - INFO - [chrome] Sending Keys to Confirm Password Field
+2025-09-29 19:00:18,068 - INFO - [chrome] Clicked Signup Button
+2025-09-29 19:00:30,186 - ERROR - [chrome] Error checking signup result: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0x7ff620bc1eb5+80197]
+	GetHandleVerifier [0x0x7ff620bc1f10+80288]
+	(No symbol) [0x0x7ff6209402fa]
+	(No symbol) [0x0x7ff620997cd7]
+	(No symbol) [0x0x7ff620997f9c]
+	(No symbol) [0x0x7ff6209eba87]
+	(No symbol) [0x0x7ff6209c03bf]
+	(No symbol) [0x0x7ff6209e87fb]
+	(No symbol) [0x0x7ff6209c0153]
+	(No symbol) [0x0x7ff620988b02]
+	(No symbol) [0x0x7ff6209898d3]
+	GetHandleVerifier [0x0x7ff620e7e83d+2949837]
+	GetHandleVerifier [0x0x7ff620e78c6a+2926330]
+	GetHandleVerifier [0x0x7ff620e986c7+3055959]
+	GetHandleVerifier [0x0x7ff620bdcfee+191102]
+	GetHandleVerifier [0x0x7ff620be50af+224063]
+	GetHandleVerifier [0x0x7ff620bcaf64+117236]
+	GetHandleVerifier [0x0x7ff620bcb119+117673]
+	GetHandleVerifier [0x0x7ff620bb10a8+11064]
+	BaseThreadInitThunk [0x0x7ffe45a4e8d7+23]
+	RtlUserThreadStart [0x0x7ffe46be8d9c+44]
+
+2025-09-29 19:00:30,341 - INFO - [chrome] Error screenshot saved as: screenshots\v0.0.0\chrome\signup-error-test1.png
+2025-09-29 19:00:30,341 - INFO - [chrome] === Running Test Case 2 ===
+2025-09-29 19:00:30,393 - INFO - [chrome] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:00:30,409 - INFO - [chrome] Clearing the Username Field
+2025-09-29 19:00:30,431 - INFO - [chrome] Sending Keys "ab" to Username Field
+2025-09-29 19:00:30,453 - INFO - [chrome] Clearing the Email Field
+2025-09-29 19:00:30,480 - INFO - [chrome] Sending Keys "invalid-email-format" to Email Field
+2025-09-29 19:00:30,494 - INFO - [chrome] Clearing the Password Field
+2025-09-29 19:00:30,530 - INFO - [chrome] Sending Keys to Password Field
+2025-09-29 19:00:30,544 - INFO - [chrome] Clearing the Confirm Password Field
+2025-09-29 19:00:30,565 - INFO - [chrome] Sending Keys to Confirm Password Field
+2025-09-29 19:00:30,592 - INFO - [chrome] Clicked Signup Button
+2025-09-29 19:00:32,678 - ERROR - [chrome] Signup was Unsuccessful
+2025-09-29 19:00:32,852 - INFO - [chrome] Screenshot saved as: screenshots\v0.0.0\chrome\signup-failed-test2.png
+2025-09-29 19:00:32,861 - INFO - [chrome] Toast message: Username must be 3-20 characters, Please enter a valid Email
+2025-09-29 19:00:32,861 - INFO - [chrome] === Running Test Case 3 ===
+2025-09-29 19:00:32,912 - INFO - [chrome] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:00:32,928 - INFO - [chrome] Clearing the Username Field
+2025-09-29 19:00:32,955 - INFO - [chrome] Sending Keys "thisusernameistoolong123" to Username Field
+2025-09-29 19:00:32,970 - INFO - [chrome] Clearing the Email Field
+2025-09-29 19:00:32,992 - INFO - [chrome] Sending Keys "invalid-email-format" to Email Field
+2025-09-29 19:00:33,006 - INFO - [chrome] Clearing the Password Field
+2025-09-29 19:00:33,031 - INFO - [chrome] Sending Keys to Password Field
+2025-09-29 19:00:33,047 - INFO - [chrome] Clearing the Confirm Password Field
+2025-09-29 19:00:33,076 - INFO - [chrome] Sending Keys to Confirm Password Field
+2025-09-29 19:00:33,106 - INFO - [chrome] Clicked Signup Button
+2025-09-29 19:00:35,137 - ERROR - [chrome] Signup was Unsuccessful
+2025-09-29 19:00:35,318 - INFO - [chrome] Screenshot saved as: screenshots\v0.0.0\chrome\signup-failed-test3.png
+2025-09-29 19:00:35,322 - INFO - [chrome] Toast message: Username must be 3-20 characters, Please enter a valid Email
+2025-09-29 19:00:35,322 - INFO - [chrome] === Running Test Case 4 ===
+2025-09-29 19:00:35,357 - INFO - [chrome] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:00:35,374 - INFO - [chrome] Clearing the Username Field
+2025-09-29 19:00:35,397 - INFO - [chrome] Sending Keys "normaluser" to Username Field
+2025-09-29 19:00:35,412 - INFO - [chrome] Clearing the Email Field
+2025-09-29 19:00:35,436 - INFO - [chrome] Sending Keys "invalid-email" to Email Field
+2025-09-29 19:00:35,454 - INFO - [chrome] Clearing the Password Field
+2025-09-29 19:00:35,476 - INFO - [chrome] Sending Keys to Password Field
+2025-09-29 19:00:35,492 - INFO - [chrome] Clearing the Confirm Password Field
+2025-09-29 19:00:35,513 - INFO - [chrome] Sending Keys to Confirm Password Field
+2025-09-29 19:00:35,541 - INFO - [chrome] Clicked Signup Button
+2025-09-29 19:00:37,572 - ERROR - [chrome] Signup was Unsuccessful
+2025-09-29 19:00:37,733 - INFO - [chrome] Screenshot saved as: screenshots\v0.0.0\chrome\signup-failed-test4.png
+2025-09-29 19:00:37,737 - INFO - [chrome] Toast message: Please enter a valid Email
+2025-09-29 19:00:37,737 - INFO - [chrome] === Running Test Case 5 ===
+2025-09-29 19:00:37,778 - INFO - [chrome] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:00:37,792 - INFO - [chrome] Clearing the Username Field
+2025-09-29 19:00:37,814 - INFO - [chrome] Sending Keys "gooduser" to Username Field
+2025-09-29 19:00:37,828 - INFO - [chrome] Clearing the Email Field
+2025-09-29 19:00:37,849 - INFO - [chrome] Sending Keys "esterlin161@" to Email Field
+2025-09-29 19:00:37,868 - INFO - [chrome] Clearing the Password Field
+2025-09-29 19:00:37,890 - INFO - [chrome] Sending Keys to Password Field
+2025-09-29 19:00:37,905 - INFO - [chrome] Clearing the Confirm Password Field
+2025-09-29 19:00:37,927 - INFO - [chrome] Sending Keys to Confirm Password Field
+2025-09-29 19:00:37,954 - INFO - [chrome] Clicked Signup Button
+2025-09-29 19:00:39,985 - ERROR - [chrome] Signup was Unsuccessful
+2025-09-29 19:00:40,157 - INFO - [chrome] Screenshot saved as: screenshots\v0.0.0\chrome\signup-failed-test5.png
+2025-09-29 19:00:40,162 - INFO - [chrome] Toast message: Invalid email format
+2025-09-29 19:00:40,162 - INFO - [chrome] === Running Test Case 6 ===
+2025-09-29 19:00:40,194 - INFO - [chrome] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:00:40,209 - INFO - [chrome] Clearing the Username Field
+2025-09-29 19:00:40,231 - INFO - [chrome] Sending Keys "testuser2" to Username Field
+2025-09-29 19:00:40,245 - INFO - [chrome] Clearing the Email Field
+2025-09-29 19:00:40,274 - INFO - [chrome] Sending Keys "esterlin161@gmail" to Email Field
+2025-09-29 19:00:40,290 - INFO - [chrome] Clearing the Password Field
+2025-09-29 19:00:40,312 - INFO - [chrome] Sending Keys to Password Field
+2025-09-29 19:00:40,327 - INFO - [chrome] Clearing the Confirm Password Field
+2025-09-29 19:00:40,348 - INFO - [chrome] Sending Keys to Confirm Password Field
+2025-09-29 19:00:40,374 - INFO - [chrome] Clicked Signup Button
+2025-09-29 19:00:42,405 - ERROR - [chrome] Signup was Unsuccessful
+2025-09-29 19:00:42,595 - INFO - [chrome] Screenshot saved as: screenshots\v0.0.0\chrome\signup-failed-test6.png
+2025-09-29 19:00:42,600 - INFO - [chrome] Toast message: Invalid email format
+2025-09-29 19:00:42,600 - INFO - [chrome] === Running Test Case 7 ===
+2025-09-29 19:00:42,633 - INFO - [chrome] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:00:42,648 - INFO - [chrome] Clearing the Username Field
+2025-09-29 19:00:42,668 - INFO - [chrome] Sending Keys "user123" to Username Field
+2025-09-29 19:00:42,684 - INFO - [chrome] Clearing the Email Field
+2025-09-29 19:00:42,705 - INFO - [chrome] Sending Keys "@gmail.com" to Email Field
+2025-09-29 19:00:42,720 - INFO - [chrome] Clearing the Password Field
+2025-09-29 19:00:42,741 - INFO - [chrome] Sending Keys to Password Field
+2025-09-29 19:00:42,755 - INFO - [chrome] Clearing the Confirm Password Field
+2025-09-29 19:00:42,777 - INFO - [chrome] Sending Keys to Confirm Password Field
+2025-09-29 19:00:42,803 - INFO - [chrome] Clicked Signup Button
+2025-09-29 19:00:44,834 - ERROR - [chrome] Signup was Unsuccessful
+2025-09-29 19:00:45,012 - INFO - [chrome] Screenshot saved as: screenshots\v0.0.0\chrome\signup-failed-test7.png
+2025-09-29 19:00:45,016 - INFO - [chrome] Toast message: Invalid email format
+2025-09-29 19:00:45,016 - INFO - [chrome] === Running Test Case 8 ===
+2025-09-29 19:00:45,052 - INFO - [chrome] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:00:45,069 - INFO - [chrome] Clearing the Username Field
+2025-09-29 19:00:45,092 - INFO - [chrome] Sending Keys "validuser" to Username Field
+2025-09-29 19:00:45,113 - INFO - [chrome] Clearing the Email Field
+2025-09-29 19:00:45,140 - INFO - [chrome] Sending Keys "valid-email@test.com" to Email Field
+2025-09-29 19:00:45,154 - INFO - [chrome] Clearing the Password Field
+2025-09-29 19:00:45,174 - INFO - [chrome] Sending Keys to Password Field
+2025-09-29 19:00:45,189 - INFO - [chrome] Clearing the Confirm Password Field
+2025-09-29 19:00:45,208 - INFO - [chrome] Sending Keys to Confirm Password Field
+2025-09-29 19:00:45,236 - INFO - [chrome] Clicked Signup Button
+2025-09-29 19:00:47,267 - ERROR - [chrome] Signup was Unsuccessful
+2025-09-29 19:00:47,443 - INFO - [chrome] Screenshot saved as: screenshots\v0.0.0\chrome\signup-failed-test8.png
+2025-09-29 19:00:47,448 - INFO - [chrome] Toast message: Enter a valid Password
+2025-09-29 19:00:47,448 - INFO - [chrome] === Running Test Case 9 ===
+2025-09-29 19:00:47,488 - INFO - [chrome] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:00:47,503 - INFO - [chrome] Clearing the Username Field
+2025-09-29 19:00:47,524 - INFO - [chrome] Sending Keys "testcase" to Username Field
+2025-09-29 19:00:47,539 - INFO - [chrome] Clearing the Email Field
+2025-09-29 19:00:47,566 - INFO - [chrome] Sending Keys "valid-email2@test.com" to Email Field
+2025-09-29 19:00:47,581 - INFO - [chrome] Clearing the Password Field
+2025-09-29 19:00:47,603 - INFO - [chrome] Sending Keys to Password Field
+2025-09-29 19:00:47,619 - INFO - [chrome] Clearing the Confirm Password Field
+2025-09-29 19:00:47,640 - INFO - [chrome] Sending Keys to Confirm Password Field
+2025-09-29 19:00:47,665 - INFO - [chrome] Clicked Signup Button
+2025-09-29 19:00:49,696 - ERROR - [chrome] Signup was Unsuccessful
+2025-09-29 19:00:49,877 - INFO - [chrome] Screenshot saved as: screenshots\v0.0.0\chrome\signup-failed-test9.png
+2025-09-29 19:00:49,882 - INFO - [chrome] Toast message: Enter a valid Password
+2025-09-29 19:00:49,882 - INFO - [chrome] === Running Test Case 10 ===
+2025-09-29 19:00:49,919 - INFO - [chrome] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:00:49,933 - INFO - [chrome] Clearing the Username Field
+2025-09-29 19:00:49,954 - INFO - [chrome] Sending Keys "example" to Username Field
+2025-09-29 19:00:49,969 - INFO - [chrome] Clearing the Email Field
+2025-09-29 19:00:49,995 - INFO - [chrome] Sending Keys "valid-email3@test.com" to Email Field
+2025-09-29 19:00:50,010 - INFO - [chrome] Clearing the Password Field
+2025-09-29 19:00:50,033 - INFO - [chrome] Sending Keys to Password Field
+2025-09-29 19:00:50,047 - INFO - [chrome] Clearing the Confirm Password Field
+2025-09-29 19:00:50,070 - INFO - [chrome] Sending Keys to Confirm Password Field
+2025-09-29 19:00:50,096 - INFO - [chrome] Clicked Signup Button
+2025-09-29 19:00:52,127 - ERROR - [chrome] Signup was Unsuccessful
+2025-09-29 19:00:52,305 - INFO - [chrome] Screenshot saved as: screenshots\v0.0.0\chrome\signup-failed-test10.png
+2025-09-29 19:00:52,310 - INFO - [chrome] Toast message: Enter a valid Password
+2025-09-29 19:00:52,310 - INFO - [chrome] === Running Test Case 11 ===
+2025-09-29 19:00:52,340 - INFO - [chrome] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:00:52,355 - INFO - [chrome] Clearing the Username Field
+2025-09-29 19:00:52,375 - INFO - [chrome] Sending Keys "demo" to Username Field
+2025-09-29 19:00:52,389 - INFO - [chrome] Clearing the Email Field
+2025-09-29 19:00:52,416 - INFO - [chrome] Sending Keys "valid-email4@test.com" to Email Field
+2025-09-29 19:00:52,431 - INFO - [chrome] Clearing the Password Field
+2025-09-29 19:00:52,451 - INFO - [chrome] Sending Keys to Password Field
+2025-09-29 19:00:52,465 - INFO - [chrome] Clearing the Confirm Password Field
+2025-09-29 19:00:52,485 - INFO - [chrome] Sending Keys to Confirm Password Field
+2025-09-29 19:00:52,510 - INFO - [chrome] Clicked Signup Button
+2025-09-29 19:00:54,540 - ERROR - [chrome] Signup was Unsuccessful
+2025-09-29 19:00:54,736 - INFO - [chrome] Screenshot saved as: screenshots\v0.0.0\chrome\signup-failed-test11.png
+2025-09-29 19:00:54,741 - INFO - [chrome] Toast message: Enter a valid Password
+2025-09-29 19:00:54,741 - INFO - [chrome] === Running Test Case 12 ===
+2025-09-29 19:00:54,771 - INFO - [chrome] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:00:54,788 - INFO - [chrome] Clearing the Username Field
+2025-09-29 19:00:54,808 - INFO - [chrome] Sending Keys "sample" to Username Field
+2025-09-29 19:00:54,823 - INFO - [chrome] Clearing the Email Field
+2025-09-29 19:00:54,849 - INFO - [chrome] Sending Keys "valid-email5@test.com" to Email Field
+2025-09-29 19:00:54,863 - INFO - [chrome] Clearing the Password Field
+2025-09-29 19:00:54,885 - INFO - [chrome] Sending Keys to Password Field
+2025-09-29 19:00:54,899 - INFO - [chrome] Clearing the Confirm Password Field
+2025-09-29 19:00:54,920 - INFO - [chrome] Sending Keys to Confirm Password Field
+2025-09-29 19:00:54,946 - INFO - [chrome] Clicked Signup Button
+2025-09-29 19:00:56,977 - ERROR - [chrome] Signup was Unsuccessful
+2025-09-29 19:00:57,153 - INFO - [chrome] Screenshot saved as: screenshots\v0.0.0\chrome\signup-failed-test12.png
+2025-09-29 19:00:57,158 - INFO - [chrome] Toast message: Enter a valid Password
+2025-09-29 19:00:57,158 - INFO - [chrome] === Running Test Case 13 ===
+2025-09-29 19:00:57,193 - INFO - [chrome] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:00:57,208 - INFO - [chrome] Clearing the Username Field
+2025-09-29 19:00:57,228 - INFO - [chrome] Sending Keys "user456" to Username Field
+2025-09-29 19:00:57,243 - INFO - [chrome] Clearing the Email Field
+2025-09-29 19:00:57,270 - INFO - [chrome] Sending Keys "valid-email6@test.com" to Email Field
+2025-09-29 19:00:57,284 - INFO - [chrome] Clearing the Password Field
+2025-09-29 19:00:57,305 - INFO - [chrome] Sending Keys to Password Field
+2025-09-29 19:00:57,320 - INFO - [chrome] Clearing the Confirm Password Field
+2025-09-29 19:00:57,341 - INFO - [chrome] Sending Keys to Confirm Password Field
+2025-09-29 19:00:57,367 - INFO - [chrome] Clicked Signup Button
+2025-09-29 19:00:59,397 - ERROR - [chrome] Signup was Unsuccessful
+2025-09-29 19:00:59,580 - INFO - [chrome] Screenshot saved as: screenshots\v0.0.0\chrome\signup-failed-test13.png
+2025-09-29 19:00:59,585 - INFO - [chrome] Toast message: Must match the Password above
+2025-09-29 19:00:59,585 - INFO - [chrome] === Running Test Case 14 ===
+2025-09-29 19:00:59,618 - INFO - [chrome] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:00:59,634 - INFO - [chrome] Clearing the Username Field
+2025-09-29 19:00:59,656 - INFO - [chrome] Sending Keys "test.user" to Username Field
+2025-09-29 19:00:59,670 - INFO - [chrome] Clearing the Email Field
+2025-09-29 19:00:59,698 - INFO - [chrome] Sending Keys "valid-email7@test.com" to Email Field
+2025-09-29 19:00:59,712 - INFO - [chrome] Clearing the Password Field
+2025-09-29 19:00:59,733 - INFO - [chrome] Sending Keys to Password Field
+2025-09-29 19:00:59,748 - INFO - [chrome] Clearing the Confirm Password Field
+2025-09-29 19:00:59,767 - INFO - [chrome] Sending Keys to Confirm Password Field
+2025-09-29 19:00:59,792 - INFO - [chrome] Clicked Signup Button
+2025-09-29 19:01:01,823 - ERROR - [chrome] Signup was Unsuccessful
+2025-09-29 19:01:02,004 - INFO - [chrome] Screenshot saved as: screenshots\v0.0.0\chrome\signup-failed-test14.png
+2025-09-29 19:01:02,008 - INFO - [chrome] Toast message: Username must be 3-20 characters long and can only contain letters, numbers, and underscores
+2025-09-29 19:01:02,008 - INFO - [chrome] === Running Test Case 15 ===
+2025-09-29 19:01:02,041 - INFO - [chrome] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:01:02,056 - INFO - [chrome] Clearing the Username Field
+2025-09-29 19:01:02,077 - INFO - [chrome] Sending Keys "user-name" to Username Field
+2025-09-29 19:01:02,091 - INFO - [chrome] Clearing the Email Field
+2025-09-29 19:01:02,118 - INFO - [chrome] Sending Keys "valid-email8@test.com" to Email Field
+2025-09-29 19:01:02,132 - INFO - [chrome] Clearing the Password Field
+2025-09-29 19:01:02,152 - INFO - [chrome] Sending Keys to Password Field
+2025-09-29 19:01:02,167 - INFO - [chrome] Clearing the Confirm Password Field
+2025-09-29 19:01:02,186 - INFO - [chrome] Sending Keys to Confirm Password Field
+2025-09-29 19:01:02,213 - INFO - [chrome] Clicked Signup Button
+2025-09-29 19:01:04,243 - ERROR - [chrome] Signup was Unsuccessful
+2025-09-29 19:01:04,422 - INFO - [chrome] Screenshot saved as: screenshots\v0.0.0\chrome\signup-failed-test15.png
+2025-09-29 19:01:04,426 - INFO - [chrome] Toast message: Username must be 3-20 characters long and can only contain letters, numbers, and underscores
+2025-09-29 19:01:04,426 - INFO - [chrome] === Running Test Case 16 ===
+2025-09-29 19:01:04,471 - INFO - [chrome] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:01:04,486 - INFO - [chrome] Clearing the Username Field
+2025-09-29 19:01:04,510 - INFO - [chrome] Sending Keys "user_underscore" to Username Field
+2025-09-29 19:01:04,525 - INFO - [chrome] Clearing the Email Field
+2025-09-29 19:01:04,552 - INFO - [chrome] Sending Keys "valid-email9@test.com" to Email Field
+2025-09-29 19:01:04,568 - INFO - [chrome] Clearing the Password Field
+2025-09-29 19:01:04,589 - INFO - [chrome] Sending Keys to Password Field
+2025-09-29 19:01:04,603 - INFO - [chrome] Clearing the Confirm Password Field
+2025-09-29 19:01:04,623 - INFO - [chrome] Sending Keys to Confirm Password Field
+2025-09-29 19:01:04,648 - INFO - [chrome] Clicked Signup Button
+2025-09-29 19:01:06,679 - ERROR - [chrome] Signup was Unsuccessful
+2025-09-29 19:01:06,870 - INFO - [chrome] Screenshot saved as: screenshots\v0.0.0\chrome\signup-failed-test16.png
+2025-09-29 19:01:06,875 - INFO - [chrome] Toast message: Enter a valid Password
+2025-09-29 19:01:06,875 - INFO - [chrome] === TEST SUMMARY ===
+2025-09-29 19:01:06,875 - INFO - [chrome] Test 1: ERROR
+2025-09-29 19:01:06,875 - INFO - [chrome] Test 2: FAILED
+2025-09-29 19:01:06,875 - INFO - [chrome] Test 3: FAILED
+2025-09-29 19:01:06,875 - INFO - [chrome] Test 4: FAILED
+2025-09-29 19:01:06,875 - INFO - [chrome] Test 5: FAILED
+2025-09-29 19:01:06,875 - INFO - [chrome] Test 6: FAILED
+2025-09-29 19:01:06,875 - INFO - [chrome] Test 7: FAILED
+2025-09-29 19:01:06,875 - INFO - [chrome] Test 8: FAILED
+2025-09-29 19:01:06,875 - INFO - [chrome] Test 9: FAILED
+2025-09-29 19:01:06,875 - INFO - [chrome] Test 10: FAILED
+2025-09-29 19:01:06,875 - INFO - [chrome] Test 11: FAILED
+2025-09-29 19:01:06,875 - INFO - [chrome] Test 12: FAILED
+2025-09-29 19:01:06,875 - INFO - [chrome] Test 13: FAILED
+2025-09-29 19:01:06,875 - INFO - [chrome] Test 14: FAILED
+2025-09-29 19:01:06,875 - INFO - [chrome] Test 15: FAILED
+2025-09-29 19:01:06,875 - INFO - [chrome] Test 16: FAILED
+2025-09-29 19:01:08,994 - INFO - [chrome] Browser closed
+2025-09-29 19:01:08,994 - INFO - 
+============================================================
+2025-09-29 19:01:08,994 - INFO - TESTING WITH FIREFOX
+2025-09-29 19:01:08,994 - INFO - ============================================================
+2025-09-29 19:01:13,700 - INFO - Loaded 16 test cases from test_data/registerData.csv
+2025-09-29 19:01:13,700 - INFO - Initialized FIREFOX browser for testing
+2025-09-29 19:01:13,700 - INFO - [firefox] === Running Test Case 1 ===
+2025-09-29 19:01:14,020 - INFO - [firefox] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:01:14,043 - INFO - [firefox] Clearing the Username Field
+2025-09-29 19:01:14,082 - INFO - [firefox] Sending Keys "validuser123" to Username Field
+2025-09-29 19:01:14,085 - INFO - [firefox] Clearing the Email Field
+2025-09-29 19:01:14,098 - INFO - [firefox] Sending Keys "esterlin161@gmail.com" to Email Field
+2025-09-29 19:01:14,102 - INFO - [firefox] Clearing the Password Field
+2025-09-29 19:01:14,110 - INFO - [firefox] Sending Keys to Password Field
+2025-09-29 19:01:14,114 - INFO - [firefox] Clearing the Confirm Password Field
+2025-09-29 19:01:14,154 - INFO - [firefox] Sending Keys to Confirm Password Field
+2025-09-29 19:01:14,228 - INFO - [firefox] Clicked Signup Button
+2025-09-29 19:01:16,258 - ERROR - [firefox] Signup was Unsuccessful
+2025-09-29 19:01:16,300 - INFO - [firefox] Screenshot saved as: screenshots\v0.0.0\firefox\signup-failed-test1.png
+2025-09-29 19:01:16,307 - INFO - [firefox] Toast message: User with this email or username already exists
+2025-09-29 19:01:16,307 - INFO - [firefox] === Running Test Case 2 ===
+2025-09-29 19:01:16,371 - INFO - [firefox] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:01:16,376 - INFO - [firefox] Clearing the Username Field
+2025-09-29 19:01:16,384 - INFO - [firefox] Sending Keys "ab" to Username Field
+2025-09-29 19:01:16,387 - INFO - [firefox] Clearing the Email Field
+2025-09-29 19:01:16,400 - INFO - [firefox] Sending Keys "invalid-email-format" to Email Field
+2025-09-29 19:01:16,403 - INFO - [firefox] Clearing the Password Field
+2025-09-29 19:01:16,410 - INFO - [firefox] Sending Keys to Password Field
+2025-09-29 19:01:16,413 - INFO - [firefox] Clearing the Confirm Password Field
+2025-09-29 19:01:16,420 - INFO - [firefox] Sending Keys to Confirm Password Field
+2025-09-29 19:01:16,488 - INFO - [firefox] Clicked Signup Button
+2025-09-29 19:01:18,517 - ERROR - [firefox] Signup was Unsuccessful
+2025-09-29 19:01:18,553 - INFO - [firefox] Screenshot saved as: screenshots\v0.0.0\firefox\signup-failed-test2.png
+2025-09-29 19:01:18,559 - INFO - [firefox] Toast message: Username must be 3-20 characters, Please enter a valid Email
+2025-09-29 19:01:18,559 - INFO - [firefox] === Running Test Case 3 ===
+2025-09-29 19:01:18,613 - INFO - [firefox] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:01:18,618 - INFO - [firefox] Clearing the Username Field
+2025-09-29 19:01:18,636 - INFO - [firefox] Sending Keys "thisusernameistoolong123" to Username Field
+2025-09-29 19:01:18,639 - INFO - [firefox] Clearing the Email Field
+2025-09-29 19:01:18,651 - INFO - [firefox] Sending Keys "invalid-email-format" to Email Field
+2025-09-29 19:01:18,654 - INFO - [firefox] Clearing the Password Field
+2025-09-29 19:01:18,663 - INFO - [firefox] Sending Keys to Password Field
+2025-09-29 19:01:18,666 - INFO - [firefox] Clearing the Confirm Password Field
+2025-09-29 19:01:18,674 - INFO - [firefox] Sending Keys to Confirm Password Field
+2025-09-29 19:01:18,738 - INFO - [firefox] Clicked Signup Button
+2025-09-29 19:01:20,767 - ERROR - [firefox] Signup was Unsuccessful
+2025-09-29 19:01:20,803 - INFO - [firefox] Screenshot saved as: screenshots\v0.0.0\firefox\signup-failed-test3.png
+2025-09-29 19:01:20,809 - INFO - [firefox] Toast message: Username must be 3-20 characters, Please enter a valid Email
+2025-09-29 19:01:20,809 - INFO - [firefox] === Running Test Case 4 ===
+2025-09-29 19:01:20,864 - INFO - [firefox] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:01:20,868 - INFO - [firefox] Clearing the Username Field
+2025-09-29 19:01:20,880 - INFO - [firefox] Sending Keys "normaluser" to Username Field
+2025-09-29 19:01:20,883 - INFO - [firefox] Clearing the Email Field
+2025-09-29 19:01:20,892 - INFO - [firefox] Sending Keys "invalid-email" to Email Field
+2025-09-29 19:01:20,895 - INFO - [firefox] Clearing the Password Field
+2025-09-29 19:01:20,903 - INFO - [firefox] Sending Keys to Password Field
+2025-09-29 19:01:20,905 - INFO - [firefox] Clearing the Confirm Password Field
+2025-09-29 19:01:20,912 - INFO - [firefox] Sending Keys to Confirm Password Field
+2025-09-29 19:01:20,981 - INFO - [firefox] Clicked Signup Button
+2025-09-29 19:01:23,011 - ERROR - [firefox] Signup was Unsuccessful
+2025-09-29 19:01:23,044 - INFO - [firefox] Screenshot saved as: screenshots\v0.0.0\firefox\signup-failed-test4.png
+2025-09-29 19:01:23,050 - INFO - [firefox] Toast message: Please enter a valid Email
+2025-09-29 19:01:23,050 - INFO - [firefox] === Running Test Case 5 ===
+2025-09-29 19:01:23,105 - INFO - [firefox] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:01:23,109 - INFO - [firefox] Clearing the Username Field
+2025-09-29 19:01:23,120 - INFO - [firefox] Sending Keys "gooduser" to Username Field
+2025-09-29 19:01:23,123 - INFO - [firefox] Clearing the Email Field
+2025-09-29 19:01:23,131 - INFO - [firefox] Sending Keys "esterlin161@" to Email Field
+2025-09-29 19:01:23,134 - INFO - [firefox] Clearing the Password Field
+2025-09-29 19:01:23,142 - INFO - [firefox] Sending Keys to Password Field
+2025-09-29 19:01:23,144 - INFO - [firefox] Clearing the Confirm Password Field
+2025-09-29 19:01:23,151 - INFO - [firefox] Sending Keys to Confirm Password Field
+2025-09-29 19:01:23,215 - INFO - [firefox] Clicked Signup Button
+2025-09-29 19:01:25,244 - ERROR - [firefox] Signup was Unsuccessful
+2025-09-29 19:01:25,278 - INFO - [firefox] Screenshot saved as: screenshots\v0.0.0\firefox\signup-failed-test5.png
+2025-09-29 19:01:25,284 - INFO - [firefox] Toast message: Invalid email format
+2025-09-29 19:01:25,284 - INFO - [firefox] === Running Test Case 6 ===
+2025-09-29 19:01:25,335 - INFO - [firefox] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:01:25,337 - INFO - [firefox] Clearing the Username Field
+2025-09-29 19:01:25,350 - INFO - [firefox] Sending Keys "testuser2" to Username Field
+2025-09-29 19:01:25,353 - INFO - [firefox] Clearing the Email Field
+2025-09-29 19:01:25,363 - INFO - [firefox] Sending Keys "esterlin161@gmail" to Email Field
+2025-09-29 19:01:25,365 - INFO - [firefox] Clearing the Password Field
+2025-09-29 19:01:25,372 - INFO - [firefox] Sending Keys to Password Field
+2025-09-29 19:01:25,375 - INFO - [firefox] Clearing the Confirm Password Field
+2025-09-29 19:01:25,381 - INFO - [firefox] Sending Keys to Confirm Password Field
+2025-09-29 19:01:25,451 - INFO - [firefox] Clicked Signup Button
+2025-09-29 19:01:27,479 - ERROR - [firefox] Signup was Unsuccessful
+2025-09-29 19:01:27,512 - INFO - [firefox] Screenshot saved as: screenshots\v0.0.0\firefox\signup-failed-test6.png
+2025-09-29 19:01:27,518 - INFO - [firefox] Toast message: Invalid email format
+2025-09-29 19:01:27,518 - INFO - [firefox] === Running Test Case 7 ===
+2025-09-29 19:01:27,564 - INFO - [firefox] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:01:27,568 - INFO - [firefox] Clearing the Username Field
+2025-09-29 19:01:27,577 - INFO - [firefox] Sending Keys "user123" to Username Field
+2025-09-29 19:01:27,580 - INFO - [firefox] Clearing the Email Field
+2025-09-29 19:01:27,588 - INFO - [firefox] Sending Keys "@gmail.com" to Email Field
+2025-09-29 19:01:27,591 - INFO - [firefox] Clearing the Password Field
+2025-09-29 19:01:27,599 - INFO - [firefox] Sending Keys to Password Field
+2025-09-29 19:01:27,602 - INFO - [firefox] Clearing the Confirm Password Field
+2025-09-29 19:01:27,610 - INFO - [firefox] Sending Keys to Confirm Password Field
+2025-09-29 19:01:27,675 - INFO - [firefox] Clicked Signup Button
+2025-09-29 19:01:29,705 - ERROR - [firefox] Signup was Unsuccessful
+2025-09-29 19:01:29,752 - INFO - [firefox] Screenshot saved as: screenshots\v0.0.0\firefox\signup-failed-test7.png
+2025-09-29 19:01:29,758 - INFO - [firefox] Toast message: Invalid email format
+2025-09-29 19:01:29,758 - INFO - [firefox] === Running Test Case 8 ===
+2025-09-29 19:01:29,805 - INFO - [firefox] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:01:29,810 - INFO - [firefox] Clearing the Username Field
+2025-09-29 19:01:29,823 - INFO - [firefox] Sending Keys "validuser" to Username Field
+2025-09-29 19:01:29,826 - INFO - [firefox] Clearing the Email Field
+2025-09-29 19:01:29,837 - INFO - [firefox] Sending Keys "valid-email@test.com" to Email Field
+2025-09-29 19:01:29,840 - INFO - [firefox] Clearing the Password Field
+2025-09-29 19:01:29,845 - INFO - [firefox] Sending Keys to Password Field
+2025-09-29 19:01:29,848 - INFO - [firefox] Clearing the Confirm Password Field
+2025-09-29 19:01:29,854 - INFO - [firefox] Sending Keys to Confirm Password Field
+2025-09-29 19:01:29,927 - INFO - [firefox] Clicked Signup Button
+2025-09-29 19:01:31,955 - ERROR - [firefox] Signup was Unsuccessful
+2025-09-29 19:01:31,988 - INFO - [firefox] Screenshot saved as: screenshots\v0.0.0\firefox\signup-failed-test8.png
+2025-09-29 19:01:31,994 - INFO - [firefox] Toast message: Enter a valid Password
+2025-09-29 19:01:31,994 - INFO - [firefox] === Running Test Case 9 ===
+2025-09-29 19:01:32,040 - INFO - [firefox] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:01:32,045 - INFO - [firefox] Clearing the Username Field
+2025-09-29 19:01:32,054 - INFO - [firefox] Sending Keys "testcase" to Username Field
+2025-09-29 19:01:32,057 - INFO - [firefox] Clearing the Email Field
+2025-09-29 19:01:32,068 - INFO - [firefox] Sending Keys "valid-email2@test.com" to Email Field
+2025-09-29 19:01:32,072 - INFO - [firefox] Clearing the Password Field
+2025-09-29 19:01:32,079 - INFO - [firefox] Sending Keys to Password Field
+2025-09-29 19:01:32,082 - INFO - [firefox] Clearing the Confirm Password Field
+2025-09-29 19:01:32,089 - INFO - [firefox] Sending Keys to Confirm Password Field
+2025-09-29 19:01:32,148 - INFO - [firefox] Clicked Signup Button
+2025-09-29 19:01:34,177 - ERROR - [firefox] Signup was Unsuccessful
+2025-09-29 19:01:34,216 - INFO - [firefox] Screenshot saved as: screenshots\v0.0.0\firefox\signup-failed-test9.png
+2025-09-29 19:01:34,222 - INFO - [firefox] Toast message: Enter a valid Password
+2025-09-29 19:01:34,222 - INFO - [firefox] === Running Test Case 10 ===
+2025-09-29 19:01:34,270 - INFO - [firefox] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:01:34,275 - INFO - [firefox] Clearing the Username Field
+2025-09-29 19:01:34,287 - INFO - [firefox] Sending Keys "example" to Username Field
+2025-09-29 19:01:34,290 - INFO - [firefox] Clearing the Email Field
+2025-09-29 19:01:34,302 - INFO - [firefox] Sending Keys "valid-email3@test.com" to Email Field
+2025-09-29 19:01:34,305 - INFO - [firefox] Clearing the Password Field
+2025-09-29 19:01:34,312 - INFO - [firefox] Sending Keys to Password Field
+2025-09-29 19:01:34,315 - INFO - [firefox] Clearing the Confirm Password Field
+2025-09-29 19:01:34,323 - INFO - [firefox] Sending Keys to Confirm Password Field
+2025-09-29 19:01:34,383 - INFO - [firefox] Clicked Signup Button
+2025-09-29 19:01:36,412 - ERROR - [firefox] Signup was Unsuccessful
+2025-09-29 19:01:36,445 - INFO - [firefox] Screenshot saved as: screenshots\v0.0.0\firefox\signup-failed-test10.png
+2025-09-29 19:01:36,450 - INFO - [firefox] Toast message: Enter a valid Password
+2025-09-29 19:01:36,451 - INFO - [firefox] === Running Test Case 11 ===
+2025-09-29 19:01:36,499 - INFO - [firefox] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:01:36,503 - INFO - [firefox] Clearing the Username Field
+2025-09-29 19:01:36,511 - INFO - [firefox] Sending Keys "demo" to Username Field
+2025-09-29 19:01:36,513 - INFO - [firefox] Clearing the Email Field
+2025-09-29 19:01:36,526 - INFO - [firefox] Sending Keys "valid-email4@test.com" to Email Field
+2025-09-29 19:01:36,528 - INFO - [firefox] Clearing the Password Field
+2025-09-29 19:01:36,535 - INFO - [firefox] Sending Keys to Password Field
+2025-09-29 19:01:36,538 - INFO - [firefox] Clearing the Confirm Password Field
+2025-09-29 19:01:36,545 - INFO - [firefox] Sending Keys to Confirm Password Field
+2025-09-29 19:01:36,613 - INFO - [firefox] Clicked Signup Button
+2025-09-29 19:01:38,643 - ERROR - [firefox] Signup was Unsuccessful
+2025-09-29 19:01:38,677 - INFO - [firefox] Screenshot saved as: screenshots\v0.0.0\firefox\signup-failed-test11.png
+2025-09-29 19:01:38,683 - INFO - [firefox] Toast message: Enter a valid Password
+2025-09-29 19:01:38,683 - INFO - [firefox] === Running Test Case 12 ===
+2025-09-29 19:01:38,737 - INFO - [firefox] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:01:38,742 - INFO - [firefox] Clearing the Username Field
+2025-09-29 19:01:38,753 - INFO - [firefox] Sending Keys "sample" to Username Field
+2025-09-29 19:01:38,756 - INFO - [firefox] Clearing the Email Field
+2025-09-29 19:01:38,769 - INFO - [firefox] Sending Keys "valid-email5@test.com" to Email Field
+2025-09-29 19:01:38,772 - INFO - [firefox] Clearing the Password Field
+2025-09-29 19:01:38,779 - INFO - [firefox] Sending Keys to Password Field
+2025-09-29 19:01:38,782 - INFO - [firefox] Clearing the Confirm Password Field
+2025-09-29 19:01:38,790 - INFO - [firefox] Sending Keys to Confirm Password Field
+2025-09-29 19:01:38,860 - INFO - [firefox] Clicked Signup Button
+2025-09-29 19:01:40,891 - ERROR - [firefox] Signup was Unsuccessful
+2025-09-29 19:01:40,925 - INFO - [firefox] Screenshot saved as: screenshots\v0.0.0\firefox\signup-failed-test12.png
+2025-09-29 19:01:40,930 - INFO - [firefox] Toast message: Enter a valid Password
+2025-09-29 19:01:40,931 - INFO - [firefox] === Running Test Case 13 ===
+2025-09-29 19:01:40,977 - INFO - [firefox] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:01:40,980 - INFO - [firefox] Clearing the Username Field
+2025-09-29 19:01:40,991 - INFO - [firefox] Sending Keys "user456" to Username Field
+2025-09-29 19:01:40,994 - INFO - [firefox] Clearing the Email Field
+2025-09-29 19:01:41,005 - INFO - [firefox] Sending Keys "valid-email6@test.com" to Email Field
+2025-09-29 19:01:41,008 - INFO - [firefox] Clearing the Password Field
+2025-09-29 19:01:41,015 - INFO - [firefox] Sending Keys to Password Field
+2025-09-29 19:01:41,019 - INFO - [firefox] Clearing the Confirm Password Field
+2025-09-29 19:01:41,027 - INFO - [firefox] Sending Keys to Confirm Password Field
+2025-09-29 19:01:41,086 - INFO - [firefox] Clicked Signup Button
+2025-09-29 19:01:43,117 - ERROR - [firefox] Signup was Unsuccessful
+2025-09-29 19:01:43,151 - INFO - [firefox] Screenshot saved as: screenshots\v0.0.0\firefox\signup-failed-test13.png
+2025-09-29 19:01:43,158 - INFO - [firefox] Toast message: Must match the Password above
+2025-09-29 19:01:43,158 - INFO - [firefox] === Running Test Case 14 ===
+2025-09-29 19:01:43,224 - INFO - [firefox] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:01:43,237 - INFO - [firefox] Clearing the Username Field
+2025-09-29 19:01:43,248 - INFO - [firefox] Sending Keys "test.user" to Username Field
+2025-09-29 19:01:43,251 - INFO - [firefox] Clearing the Email Field
+2025-09-29 19:01:43,263 - INFO - [firefox] Sending Keys "valid-email7@test.com" to Email Field
+2025-09-29 19:01:43,266 - INFO - [firefox] Clearing the Password Field
+2025-09-29 19:01:43,271 - INFO - [firefox] Sending Keys to Password Field
+2025-09-29 19:01:43,275 - INFO - [firefox] Clearing the Confirm Password Field
+2025-09-29 19:01:43,281 - INFO - [firefox] Sending Keys to Confirm Password Field
+2025-09-29 19:01:43,352 - INFO - [firefox] Clicked Signup Button
+2025-09-29 19:01:45,385 - ERROR - [firefox] Signup was Unsuccessful
+2025-09-29 19:01:45,420 - INFO - [firefox] Screenshot saved as: screenshots\v0.0.0\firefox\signup-failed-test14.png
+2025-09-29 19:01:45,426 - INFO - [firefox] Toast message: Username must be 3-20 characters long and can only contain letters, numbers, and underscores
+2025-09-29 19:01:45,426 - INFO - [firefox] === Running Test Case 15 ===
+2025-09-29 19:01:45,477 - INFO - [firefox] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:01:45,481 - INFO - [firefox] Clearing the Username Field
+2025-09-29 19:01:45,497 - INFO - [firefox] Sending Keys "user-name" to Username Field
+2025-09-29 19:01:45,500 - INFO - [firefox] Clearing the Email Field
+2025-09-29 19:01:45,512 - INFO - [firefox] Sending Keys "valid-email8@test.com" to Email Field
+2025-09-29 19:01:45,514 - INFO - [firefox] Clearing the Password Field
+2025-09-29 19:01:45,521 - INFO - [firefox] Sending Keys to Password Field
+2025-09-29 19:01:45,523 - INFO - [firefox] Clearing the Confirm Password Field
+2025-09-29 19:01:45,529 - INFO - [firefox] Sending Keys to Confirm Password Field
+2025-09-29 19:01:45,594 - INFO - [firefox] Clicked Signup Button
+2025-09-29 19:01:47,625 - ERROR - [firefox] Signup was Unsuccessful
+2025-09-29 19:01:47,659 - INFO - [firefox] Screenshot saved as: screenshots\v0.0.0\firefox\signup-failed-test15.png
+2025-09-29 19:01:47,665 - INFO - [firefox] Toast message: Username must be 3-20 characters long and can only contain letters, numbers, and underscores
+2025-09-29 19:01:47,665 - INFO - [firefox] === Running Test Case 16 ===
+2025-09-29 19:01:47,712 - INFO - [firefox] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:01:47,717 - INFO - [firefox] Clearing the Username Field
+2025-09-29 19:01:47,729 - INFO - [firefox] Sending Keys "user_underscore" to Username Field
+2025-09-29 19:01:47,731 - INFO - [firefox] Clearing the Email Field
+2025-09-29 19:01:47,741 - INFO - [firefox] Sending Keys "valid-email9@test.com" to Email Field
+2025-09-29 19:01:47,744 - INFO - [firefox] Clearing the Password Field
+2025-09-29 19:01:47,750 - INFO - [firefox] Sending Keys to Password Field
+2025-09-29 19:01:47,752 - INFO - [firefox] Clearing the Confirm Password Field
+2025-09-29 19:01:47,758 - INFO - [firefox] Sending Keys to Confirm Password Field
+2025-09-29 19:01:47,816 - INFO - [firefox] Clicked Signup Button
+2025-09-29 19:01:49,846 - ERROR - [firefox] Signup was Unsuccessful
+2025-09-29 19:01:49,879 - INFO - [firefox] Screenshot saved as: screenshots\v0.0.0\firefox\signup-failed-test16.png
+2025-09-29 19:01:49,884 - INFO - [firefox] Toast message: Enter a valid Password
+2025-09-29 19:01:49,884 - INFO - [firefox] === TEST SUMMARY ===
+2025-09-29 19:01:49,884 - INFO - [firefox] Test 1: FAILED
+2025-09-29 19:01:49,884 - INFO - [firefox] Test 2: FAILED
+2025-09-29 19:01:49,884 - INFO - [firefox] Test 3: FAILED
+2025-09-29 19:01:49,884 - INFO - [firefox] Test 4: FAILED
+2025-09-29 19:01:49,884 - INFO - [firefox] Test 5: FAILED
+2025-09-29 19:01:49,884 - INFO - [firefox] Test 6: FAILED
+2025-09-29 19:01:49,884 - INFO - [firefox] Test 7: FAILED
+2025-09-29 19:01:49,884 - INFO - [firefox] Test 8: FAILED
+2025-09-29 19:01:49,884 - INFO - [firefox] Test 9: FAILED
+2025-09-29 19:01:49,884 - INFO - [firefox] Test 10: FAILED
+2025-09-29 19:01:49,884 - INFO - [firefox] Test 11: FAILED
+2025-09-29 19:01:49,884 - INFO - [firefox] Test 12: FAILED
+2025-09-29 19:01:49,884 - INFO - [firefox] Test 13: FAILED
+2025-09-29 19:01:49,884 - INFO - [firefox] Test 14: FAILED
+2025-09-29 19:01:49,884 - INFO - [firefox] Test 15: FAILED
+2025-09-29 19:01:49,884 - INFO - [firefox] Test 16: FAILED
+2025-09-29 19:01:52,457 - INFO - [firefox] Browser closed
+2025-09-29 19:01:52,457 - INFO - 
+============================================================
+2025-09-29 19:01:52,457 - INFO - TESTING WITH EDGE
+2025-09-29 19:01:52,457 - INFO - ============================================================
+2025-09-29 19:01:53,515 - INFO - Loaded 16 test cases from test_data/registerData.csv
+2025-09-29 19:01:53,515 - INFO - Initialized EDGE browser for testing
+2025-09-29 19:01:53,515 - INFO - [edge] === Running Test Case 1 ===
+2025-09-29 19:01:53,735 - INFO - [edge] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:01:53,761 - INFO - [edge] Clearing the Username Field
+2025-09-29 19:01:53,799 - INFO - [edge] Sending Keys "validuser123" to Username Field
+2025-09-29 19:01:53,816 - INFO - [edge] Clearing the Email Field
+2025-09-29 19:01:53,847 - INFO - [edge] Sending Keys "esterlin161@gmail.com" to Email Field
+2025-09-29 19:01:53,865 - INFO - [edge] Clearing the Password Field
+2025-09-29 19:01:53,892 - INFO - [edge] Sending Keys to Password Field
+2025-09-29 19:01:53,910 - INFO - [edge] Clearing the Confirm Password Field
+2025-09-29 19:01:53,933 - INFO - [edge] Sending Keys to Confirm Password Field
+2025-09-29 19:01:53,970 - INFO - [edge] Clicked Signup Button
+2025-09-29 19:01:56,008 - ERROR - [edge] Signup was Unsuccessful
+2025-09-29 19:01:56,203 - INFO - [edge] Screenshot saved as: screenshots\v0.0.0\edge\signup-failed-test1.png
+2025-09-29 19:01:56,211 - INFO - [edge] Toast message: User with this email or username already exists
+2025-09-29 19:01:56,211 - INFO - [edge] === Running Test Case 2 ===
+2025-09-29 19:01:56,259 - INFO - [edge] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:01:56,276 - INFO - [edge] Clearing the Username Field
+2025-09-29 19:01:56,295 - INFO - [edge] Sending Keys "ab" to Username Field
+2025-09-29 19:01:56,310 - INFO - [edge] Clearing the Email Field
+2025-09-29 19:01:56,336 - INFO - [edge] Sending Keys "invalid-email-format" to Email Field
+2025-09-29 19:01:56,351 - INFO - [edge] Clearing the Password Field
+2025-09-29 19:01:56,375 - INFO - [edge] Sending Keys to Password Field
+2025-09-29 19:01:56,390 - INFO - [edge] Clearing the Confirm Password Field
+2025-09-29 19:01:56,413 - INFO - [edge] Sending Keys to Confirm Password Field
+2025-09-29 19:01:56,441 - INFO - [edge] Clicked Signup Button
+2025-09-29 19:01:58,473 - ERROR - [edge] Signup was Unsuccessful
+2025-09-29 19:01:58,666 - INFO - [edge] Screenshot saved as: screenshots\v0.0.0\edge\signup-failed-test2.png
+2025-09-29 19:01:58,670 - INFO - [edge] Toast message: Username must be 3-20 characters, Please enter a valid Email
+2025-09-29 19:01:58,670 - INFO - [edge] === Running Test Case 3 ===
+2025-09-29 19:01:58,730 - INFO - [edge] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:01:58,747 - INFO - [edge] Clearing the Username Field
+2025-09-29 19:01:58,776 - INFO - [edge] Sending Keys "thisusernameistoolong123" to Username Field
+2025-09-29 19:01:58,790 - INFO - [edge] Clearing the Email Field
+2025-09-29 19:01:58,814 - INFO - [edge] Sending Keys "invalid-email-format" to Email Field
+2025-09-29 19:01:58,828 - INFO - [edge] Clearing the Password Field
+2025-09-29 19:01:58,854 - INFO - [edge] Sending Keys to Password Field
+2025-09-29 19:01:58,868 - INFO - [edge] Clearing the Confirm Password Field
+2025-09-29 19:01:58,892 - INFO - [edge] Sending Keys to Confirm Password Field
+2025-09-29 19:01:58,919 - INFO - [edge] Clicked Signup Button
+2025-09-29 19:02:00,950 - ERROR - [edge] Signup was Unsuccessful
+2025-09-29 19:02:01,154 - INFO - [edge] Screenshot saved as: screenshots\v0.0.0\edge\signup-failed-test3.png
+2025-09-29 19:02:01,158 - INFO - [edge] Toast message: Username must be 3-20 characters, Please enter a valid Email
+2025-09-29 19:02:01,159 - INFO - [edge] === Running Test Case 4 ===
+2025-09-29 19:02:01,212 - INFO - [edge] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:02:01,230 - INFO - [edge] Clearing the Username Field
+2025-09-29 19:02:01,253 - INFO - [edge] Sending Keys "normaluser" to Username Field
+2025-09-29 19:02:01,268 - INFO - [edge] Clearing the Email Field
+2025-09-29 19:02:01,290 - INFO - [edge] Sending Keys "invalid-email" to Email Field
+2025-09-29 19:02:01,316 - INFO - [edge] Clearing the Password Field
+2025-09-29 19:02:01,339 - INFO - [edge] Sending Keys to Password Field
+2025-09-29 19:02:01,355 - INFO - [edge] Clearing the Confirm Password Field
+2025-09-29 19:02:01,381 - INFO - [edge] Sending Keys to Confirm Password Field
+2025-09-29 19:02:01,409 - INFO - [edge] Clicked Signup Button
+2025-09-29 19:02:03,441 - ERROR - [edge] Signup was Unsuccessful
+2025-09-29 19:02:03,634 - INFO - [edge] Screenshot saved as: screenshots\v0.0.0\edge\signup-failed-test4.png
+2025-09-29 19:02:03,639 - INFO - [edge] Toast message: Please enter a valid Email
+2025-09-29 19:02:03,639 - INFO - [edge] === Running Test Case 5 ===
+2025-09-29 19:02:03,698 - INFO - [edge] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:02:03,715 - INFO - [edge] Clearing the Username Field
+2025-09-29 19:02:03,740 - INFO - [edge] Sending Keys "gooduser" to Username Field
+2025-09-29 19:02:03,754 - INFO - [edge] Clearing the Email Field
+2025-09-29 19:02:03,776 - INFO - [edge] Sending Keys "esterlin161@" to Email Field
+2025-09-29 19:02:03,799 - INFO - [edge] Clearing the Password Field
+2025-09-29 19:02:03,824 - INFO - [edge] Sending Keys to Password Field
+2025-09-29 19:02:03,839 - INFO - [edge] Clearing the Confirm Password Field
+2025-09-29 19:02:03,862 - INFO - [edge] Sending Keys to Confirm Password Field
+2025-09-29 19:02:03,890 - INFO - [edge] Clicked Signup Button
+2025-09-29 19:02:05,921 - ERROR - [edge] Signup was Unsuccessful
+2025-09-29 19:02:06,120 - INFO - [edge] Screenshot saved as: screenshots\v0.0.0\edge\signup-failed-test5.png
+2025-09-29 19:02:06,124 - INFO - [edge] Toast message: Invalid email format
+2025-09-29 19:02:06,125 - INFO - [edge] === Running Test Case 6 ===
+2025-09-29 19:02:06,189 - INFO - [edge] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:02:06,205 - INFO - [edge] Clearing the Username Field
+2025-09-29 19:02:06,227 - INFO - [edge] Sending Keys "testuser2" to Username Field
+2025-09-29 19:02:06,241 - INFO - [edge] Clearing the Email Field
+2025-09-29 19:02:06,264 - INFO - [edge] Sending Keys "esterlin161@gmail" to Email Field
+2025-09-29 19:02:06,285 - INFO - [edge] Clearing the Password Field
+2025-09-29 19:02:06,309 - INFO - [edge] Sending Keys to Password Field
+2025-09-29 19:02:06,323 - INFO - [edge] Clearing the Confirm Password Field
+2025-09-29 19:02:06,345 - INFO - [edge] Sending Keys to Confirm Password Field
+2025-09-29 19:02:06,378 - INFO - [edge] Clicked Signup Button
+2025-09-29 19:02:08,409 - ERROR - [edge] Signup was Unsuccessful
+2025-09-29 19:02:08,592 - INFO - [edge] Screenshot saved as: screenshots\v0.0.0\edge\signup-failed-test6.png
+2025-09-29 19:02:08,597 - INFO - [edge] Toast message: Invalid email format
+2025-09-29 19:02:08,597 - INFO - [edge] === Running Test Case 7 ===
+2025-09-29 19:02:08,655 - INFO - [edge] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:02:08,671 - INFO - [edge] Clearing the Username Field
+2025-09-29 19:02:08,693 - INFO - [edge] Sending Keys "user123" to Username Field
+2025-09-29 19:02:08,720 - INFO - [edge] Clearing the Email Field
+2025-09-29 19:02:08,742 - INFO - [edge] Sending Keys "@gmail.com" to Email Field
+2025-09-29 19:02:08,756 - INFO - [edge] Clearing the Password Field
+2025-09-29 19:02:08,780 - INFO - [edge] Sending Keys to Password Field
+2025-09-29 19:02:08,795 - INFO - [edge] Clearing the Confirm Password Field
+2025-09-29 19:02:08,818 - INFO - [edge] Sending Keys to Confirm Password Field
+2025-09-29 19:02:08,851 - INFO - [edge] Clicked Signup Button
+2025-09-29 19:02:10,882 - ERROR - [edge] Signup was Unsuccessful
+2025-09-29 19:02:11,078 - INFO - [edge] Screenshot saved as: screenshots\v0.0.0\edge\signup-failed-test7.png
+2025-09-29 19:02:11,083 - INFO - [edge] Toast message: Invalid email format
+2025-09-29 19:02:11,083 - INFO - [edge] === Running Test Case 8 ===
+2025-09-29 19:02:11,145 - INFO - [edge] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:02:11,164 - INFO - [edge] Clearing the Username Field
+2025-09-29 19:02:11,189 - INFO - [edge] Sending Keys "validuser" to Username Field
+2025-09-29 19:02:11,211 - INFO - [edge] Clearing the Email Field
+2025-09-29 19:02:11,242 - INFO - [edge] Sending Keys "valid-email@test.com" to Email Field
+2025-09-29 19:02:11,257 - INFO - [edge] Clearing the Password Field
+2025-09-29 19:02:11,282 - INFO - [edge] Sending Keys to Password Field
+2025-09-29 19:02:11,299 - INFO - [edge] Clearing the Confirm Password Field
+2025-09-29 19:02:11,323 - INFO - [edge] Sending Keys to Confirm Password Field
+2025-09-29 19:02:11,355 - INFO - [edge] Clicked Signup Button
+2025-09-29 19:02:13,387 - ERROR - [edge] Signup was Unsuccessful
+2025-09-29 19:02:13,571 - INFO - [edge] Screenshot saved as: screenshots\v0.0.0\edge\signup-failed-test8.png
+2025-09-29 19:02:13,575 - INFO - [edge] Toast message: Enter a valid Password
+2025-09-29 19:02:13,575 - INFO - [edge] === Running Test Case 9 ===
+2025-09-29 19:02:13,629 - INFO - [edge] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:02:13,649 - INFO - [edge] Clearing the Username Field
+2025-09-29 19:02:13,671 - INFO - [edge] Sending Keys "testcase" to Username Field
+2025-09-29 19:02:13,686 - INFO - [edge] Clearing the Email Field
+2025-09-29 19:02:13,712 - INFO - [edge] Sending Keys "valid-email2@test.com" to Email Field
+2025-09-29 19:02:13,726 - INFO - [edge] Clearing the Password Field
+2025-09-29 19:02:13,760 - INFO - [edge] Sending Keys to Password Field
+2025-09-29 19:02:13,774 - INFO - [edge] Clearing the Confirm Password Field
+2025-09-29 19:02:13,797 - INFO - [edge] Sending Keys to Confirm Password Field
+2025-09-29 19:02:13,825 - INFO - [edge] Clicked Signup Button
+2025-09-29 19:02:15,856 - ERROR - [edge] Signup was Unsuccessful
+2025-09-29 19:02:16,058 - INFO - [edge] Screenshot saved as: screenshots\v0.0.0\edge\signup-failed-test9.png
+2025-09-29 19:02:16,063 - INFO - [edge] Toast message: Enter a valid Password
+2025-09-29 19:02:16,063 - INFO - [edge] === Running Test Case 10 ===
+2025-09-29 19:02:16,120 - INFO - [edge] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:02:16,138 - INFO - [edge] Clearing the Username Field
+2025-09-29 19:02:16,159 - INFO - [edge] Sending Keys "example" to Username Field
+2025-09-29 19:02:16,174 - INFO - [edge] Clearing the Email Field
+2025-09-29 19:02:16,200 - INFO - [edge] Sending Keys "valid-email3@test.com" to Email Field
+2025-09-29 19:02:16,214 - INFO - [edge] Clearing the Password Field
+2025-09-29 19:02:16,239 - INFO - [edge] Sending Keys to Password Field
+2025-09-29 19:02:16,253 - INFO - [edge] Clearing the Confirm Password Field
+2025-09-29 19:02:16,278 - INFO - [edge] Sending Keys to Confirm Password Field
+2025-09-29 19:02:16,315 - INFO - [edge] Clicked Signup Button
+2025-09-29 19:02:18,347 - ERROR - [edge] Signup was Unsuccessful
+2025-09-29 19:02:18,532 - INFO - [edge] Screenshot saved as: screenshots\v0.0.0\edge\signup-failed-test10.png
+2025-09-29 19:02:18,536 - INFO - [edge] Toast message: Enter a valid Password
+2025-09-29 19:02:18,536 - INFO - [edge] === Running Test Case 11 ===
+2025-09-29 19:02:18,592 - INFO - [edge] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:02:18,625 - INFO - [edge] Clearing the Username Field
+2025-09-29 19:02:18,647 - INFO - [edge] Sending Keys "demo" to Username Field
+2025-09-29 19:02:18,661 - INFO - [edge] Clearing the Email Field
+2025-09-29 19:02:18,687 - INFO - [edge] Sending Keys "valid-email4@test.com" to Email Field
+2025-09-29 19:02:18,702 - INFO - [edge] Clearing the Password Field
+2025-09-29 19:02:18,724 - INFO - [edge] Sending Keys to Password Field
+2025-09-29 19:02:18,744 - INFO - [edge] Clearing the Confirm Password Field
+2025-09-29 19:02:18,766 - INFO - [edge] Sending Keys to Confirm Password Field
+2025-09-29 19:02:18,795 - INFO - [edge] Clicked Signup Button
+2025-09-29 19:02:20,826 - ERROR - [edge] Signup was Unsuccessful
+2025-09-29 19:02:21,012 - INFO - [edge] Screenshot saved as: screenshots\v0.0.0\edge\signup-failed-test11.png
+2025-09-29 19:02:21,016 - INFO - [edge] Toast message: Enter a valid Password
+2025-09-29 19:02:21,016 - INFO - [edge] === Running Test Case 12 ===
+2025-09-29 19:02:21,083 - INFO - [edge] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:02:21,098 - INFO - [edge] Clearing the Username Field
+2025-09-29 19:02:21,120 - INFO - [edge] Sending Keys "sample" to Username Field
+2025-09-29 19:02:21,135 - INFO - [edge] Clearing the Email Field
+2025-09-29 19:02:21,159 - INFO - [edge] Sending Keys "valid-email5@test.com" to Email Field
+2025-09-29 19:02:21,175 - INFO - [edge] Clearing the Password Field
+2025-09-29 19:02:21,200 - INFO - [edge] Sending Keys to Password Field
+2025-09-29 19:02:21,227 - INFO - [edge] Clearing the Confirm Password Field
+2025-09-29 19:02:21,249 - INFO - [edge] Sending Keys to Confirm Password Field
+2025-09-29 19:02:21,280 - INFO - [edge] Clicked Signup Button
+2025-09-29 19:02:23,312 - ERROR - [edge] Signup was Unsuccessful
+2025-09-29 19:02:23,511 - INFO - [edge] Screenshot saved as: screenshots\v0.0.0\edge\signup-failed-test12.png
+2025-09-29 19:02:23,516 - INFO - [edge] Toast message: Enter a valid Password
+2025-09-29 19:02:23,516 - INFO - [edge] === Running Test Case 13 ===
+2025-09-29 19:02:23,570 - INFO - [edge] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:02:23,589 - INFO - [edge] Clearing the Username Field
+2025-09-29 19:02:23,611 - INFO - [edge] Sending Keys "user456" to Username Field
+2025-09-29 19:02:23,626 - INFO - [edge] Clearing the Email Field
+2025-09-29 19:02:23,651 - INFO - [edge] Sending Keys "valid-email6@test.com" to Email Field
+2025-09-29 19:02:23,666 - INFO - [edge] Clearing the Password Field
+2025-09-29 19:02:23,689 - INFO - [edge] Sending Keys to Password Field
+2025-09-29 19:02:23,703 - INFO - [edge] Clearing the Confirm Password Field
+2025-09-29 19:02:23,728 - INFO - [edge] Sending Keys to Confirm Password Field
+2025-09-29 19:02:23,759 - INFO - [edge] Clicked Signup Button
+2025-09-29 19:02:25,791 - ERROR - [edge] Signup was Unsuccessful
+2025-09-29 19:02:25,999 - INFO - [edge] Screenshot saved as: screenshots\v0.0.0\edge\signup-failed-test13.png
+2025-09-29 19:02:26,004 - INFO - [edge] Toast message: Must match the Password above
+2025-09-29 19:02:26,004 - INFO - [edge] === Running Test Case 14 ===
+2025-09-29 19:02:26,056 - INFO - [edge] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:02:26,075 - INFO - [edge] Clearing the Username Field
+2025-09-29 19:02:26,098 - INFO - [edge] Sending Keys "test.user" to Username Field
+2025-09-29 19:02:26,112 - INFO - [edge] Clearing the Email Field
+2025-09-29 19:02:26,137 - INFO - [edge] Sending Keys "valid-email7@test.com" to Email Field
+2025-09-29 19:02:26,151 - INFO - [edge] Clearing the Password Field
+2025-09-29 19:02:26,174 - INFO - [edge] Sending Keys to Password Field
+2025-09-29 19:02:26,191 - INFO - [edge] Clearing the Confirm Password Field
+2025-09-29 19:02:26,214 - INFO - [edge] Sending Keys to Confirm Password Field
+2025-09-29 19:02:26,245 - INFO - [edge] Clicked Signup Button
+2025-09-29 19:02:28,276 - ERROR - [edge] Signup was Unsuccessful
+2025-09-29 19:02:28,469 - INFO - [edge] Screenshot saved as: screenshots\v0.0.0\edge\signup-failed-test14.png
+2025-09-29 19:02:28,473 - INFO - [edge] Toast message: Username must be 3-20 characters long and can only contain letters, numbers, and underscores
+2025-09-29 19:02:28,473 - INFO - [edge] === Running Test Case 15 ===
+2025-09-29 19:02:28,532 - INFO - [edge] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:02:28,552 - INFO - [edge] Clearing the Username Field
+2025-09-29 19:02:28,575 - INFO - [edge] Sending Keys "user-name" to Username Field
+2025-09-29 19:02:28,589 - INFO - [edge] Clearing the Email Field
+2025-09-29 19:02:28,615 - INFO - [edge] Sending Keys "valid-email8@test.com" to Email Field
+2025-09-29 19:02:28,629 - INFO - [edge] Clearing the Password Field
+2025-09-29 19:02:28,652 - INFO - [edge] Sending Keys to Password Field
+2025-09-29 19:02:28,667 - INFO - [edge] Clearing the Confirm Password Field
+2025-09-29 19:02:28,688 - INFO - [edge] Sending Keys to Confirm Password Field
+2025-09-29 19:02:28,719 - INFO - [edge] Clicked Signup Button
+2025-09-29 19:02:30,751 - ERROR - [edge] Signup was Unsuccessful
+2025-09-29 19:02:30,939 - INFO - [edge] Screenshot saved as: screenshots\v0.0.0\edge\signup-failed-test15.png
+2025-09-29 19:02:30,943 - INFO - [edge] Toast message: Username must be 3-20 characters long and can only contain letters, numbers, and underscores
+2025-09-29 19:02:30,943 - INFO - [edge] === Running Test Case 16 ===
+2025-09-29 19:02:30,998 - INFO - [edge] Going to Webpage https://ai-meeting-notes-ebon.vercel.app/signup
+2025-09-29 19:02:31,015 - INFO - [edge] Clearing the Username Field
+2025-09-29 19:02:31,040 - INFO - [edge] Sending Keys "user_underscore" to Username Field
+2025-09-29 19:02:31,055 - INFO - [edge] Clearing the Email Field
+2025-09-29 19:02:31,080 - INFO - [edge] Sending Keys "valid-email9@test.com" to Email Field
+2025-09-29 19:02:31,095 - INFO - [edge] Clearing the Password Field
+2025-09-29 19:02:31,118 - INFO - [edge] Sending Keys to Password Field
+2025-09-29 19:02:31,133 - INFO - [edge] Clearing the Confirm Password Field
+2025-09-29 19:02:31,154 - INFO - [edge] Sending Keys to Confirm Password Field
+2025-09-29 19:02:31,186 - INFO - [edge] Clicked Signup Button
+2025-09-29 19:02:33,217 - ERROR - [edge] Signup was Unsuccessful
+2025-09-29 19:02:33,395 - INFO - [edge] Screenshot saved as: screenshots\v0.0.0\edge\signup-failed-test16.png
+2025-09-29 19:02:33,400 - INFO - [edge] Toast message: Enter a valid Password
+2025-09-29 19:02:33,400 - INFO - [edge] === TEST SUMMARY ===
+2025-09-29 19:02:33,400 - INFO - [edge] Test 1: FAILED
+2025-09-29 19:02:33,400 - INFO - [edge] Test 2: FAILED
+2025-09-29 19:02:33,400 - INFO - [edge] Test 3: FAILED
+2025-09-29 19:02:33,400 - INFO - [edge] Test 4: FAILED
+2025-09-29 19:02:33,400 - INFO - [edge] Test 5: FAILED
+2025-09-29 19:02:33,400 - INFO - [edge] Test 6: FAILED
+2025-09-29 19:02:33,400 - INFO - [edge] Test 7: FAILED
+2025-09-29 19:02:33,400 - INFO - [edge] Test 8: FAILED
+2025-09-29 19:02:33,400 - INFO - [edge] Test 9: FAILED
+2025-09-29 19:02:33,400 - INFO - [edge] Test 10: FAILED
+2025-09-29 19:02:33,400 - INFO - [edge] Test 11: FAILED
+2025-09-29 19:02:33,400 - INFO - [edge] Test 12: FAILED
+2025-09-29 19:02:33,400 - INFO - [edge] Test 13: FAILED
+2025-09-29 19:02:33,400 - INFO - [edge] Test 14: FAILED
+2025-09-29 19:02:33,400 - INFO - [edge] Test 15: FAILED
+2025-09-29 19:02:33,400 - INFO - [edge] Test 16: FAILED
+2025-09-29 19:02:35,522 - INFO - [edge] Browser closed
+2025-09-29 19:02:35,523 - INFO - 
+============================================================
+2025-09-29 19:02:35,523 - INFO - CROSS-BROWSER TEST SUMMARY
+2025-09-29 19:02:35,523 - INFO - ============================================================
+2025-09-29 19:02:35,523 - INFO - 
+CHROME Results:
+2025-09-29 19:02:35,523 - INFO -   Total Tests: 16
+2025-09-29 19:02:35,523 - INFO -   Passed: 0
+2025-09-29 19:02:35,523 - INFO -   Failed: 15
+2025-09-29 19:02:35,523 - INFO -   Errors: 1
+2025-09-29 19:02:35,523 - INFO -     Test 1: ERROR
+2025-09-29 19:02:35,523 - INFO -     Test 2: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 3: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 4: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 5: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 6: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 7: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 8: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 9: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 10: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 11: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 12: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 13: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 14: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 15: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 16: FAILED
+2025-09-29 19:02:35,523 - INFO - 
+FIREFOX Results:
+2025-09-29 19:02:35,523 - INFO -   Total Tests: 16
+2025-09-29 19:02:35,523 - INFO -   Passed: 0
+2025-09-29 19:02:35,523 - INFO -   Failed: 16
+2025-09-29 19:02:35,523 - INFO -   Errors: 0
+2025-09-29 19:02:35,523 - INFO -     Test 1: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 2: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 3: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 4: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 5: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 6: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 7: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 8: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 9: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 10: FAILED
+2025-09-29 19:02:35,523 - INFO -     Test 11: FAILED
+2025-09-29 19:02:35,524 - INFO -     Test 12: FAILED
+2025-09-29 19:02:35,524 - INFO -     Test 13: FAILED
+2025-09-29 19:02:35,524 - INFO -     Test 14: FAILED
+2025-09-29 19:02:35,524 - INFO -     Test 15: FAILED
+2025-09-29 19:02:35,524 - INFO -     Test 16: FAILED
+2025-09-29 19:02:35,524 - INFO - 
+EDGE Results:
+2025-09-29 19:02:35,524 - INFO -   Total Tests: 16
+2025-09-29 19:02:35,524 - INFO -   Passed: 0
+2025-09-29 19:02:35,524 - INFO -   Failed: 16
+2025-09-29 19:02:35,524 - INFO -   Errors: 0
+2025-09-29 19:02:35,524 - INFO -     Test 1: FAILED
+2025-09-29 19:02:35,524 - INFO -     Test 2: FAILED
+2025-09-29 19:02:35,524 - INFO -     Test 3: FAILED
+2025-09-29 19:02:35,524 - INFO -     Test 4: FAILED
+2025-09-29 19:02:35,524 - INFO -     Test 5: FAILED
+2025-09-29 19:02:35,524 - INFO -     Test 6: FAILED
+2025-09-29 19:02:35,524 - INFO -     Test 7: FAILED
+2025-09-29 19:02:35,524 - INFO -     Test 8: FAILED
+2025-09-29 19:02:35,524 - INFO -     Test 9: FAILED
+2025-09-29 19:02:35,524 - INFO -     Test 10: FAILED
+2025-09-29 19:02:35,524 - INFO -     Test 11: FAILED
+2025-09-29 19:02:35,524 - INFO -     Test 12: FAILED
+2025-09-29 19:02:35,524 - INFO -     Test 13: FAILED
+2025-09-29 19:02:35,524 - INFO -     Test 14: FAILED
+2025-09-29 19:02:35,524 - INFO -     Test 15: FAILED
+2025-09-29 19:02:35,524 - INFO -     Test 16: FAILED
+2025-09-29 19:02:35,524 - INFO - 
+============================================================
+2025-09-29 19:02:35,524 - INFO - ALL TESTS COMPLETED
+2025-09-29 19:02:35,524 - INFO - ============================================================

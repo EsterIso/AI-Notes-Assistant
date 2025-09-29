@@ -10,7 +10,6 @@ test-env
 
 # Logs
 logs/
-*.log
 log/
 pids/
 *.pid

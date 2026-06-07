@@ -1,10 +1,8 @@
 /* Sidebar Styles */
 .sidebar {
     grid-area: sidebar;
-    background: rgba(15, 23, 42, 0.3);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--color-bg);
+    border-right: 1px solid var(--color-border);
     padding: 1.5rem;
     overflow-y: auto;
     position: fixed;
@@ -28,7 +26,7 @@
 .nav-title {
     font-size: 0.75rem;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color-ink-faint);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-bottom: 0.75rem;
@@ -43,7 +41,7 @@
     cursor: pointer;
     transition: all 0.2s ease;
     margin-bottom: 0.25rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--color-ink-soft);
     text-decoration: none;
     border: none;
     background: none;
@@ -54,15 +52,15 @@
 }
 
 .nav-item:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+    background: var(--color-accent-lighter);
+    color: var(--color-ink);
     transform: translateX(4px);
 }
 
 .nav-item.active {
-    background: rgba(168, 85, 247, 0.2);
-    color: white;
-    border-left: 3px solid #a855f7;
+    background: var(--color-accent-lighter);
+    color: var(--color-accent-dark);
+    border-left: 3px solid var(--color-accent);
     padding-left: calc(1rem - 3px);
 }
 
@@ -85,17 +83,17 @@
 }
 
 .sidebar::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--color-bg);
     border-radius: 3px;
 }
 
 .sidebar::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--color-border);
     border-radius: 3px;
 }
 
 .sidebar::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: var(--color-accent-lighter);
 }
 .content {
     grid-area: content;

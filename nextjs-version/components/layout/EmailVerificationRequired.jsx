@@ -72,7 +72,7 @@ const EmailVerificationRequired = ({ email, onResendSuccess }) => {
                 margin: '0 auto 1rem auto'
               }}>
                 <svg 
-                  style={{ width: '2rem', height: '2rem', color: 'var(--color-purple)' }} 
+                  style={{ width: '2rem', height: '2rem', color: 'var(--color-accent-light)' }} 
                   fill="none" 
                   stroke="currentColor" 
                   viewBox="0 0 24 24"
@@ -84,18 +84,18 @@ const EmailVerificationRequired = ({ email, onResendSuccess }) => {
               <h2 style={{
                 fontSize: '1.5rem',
                 fontWeight: '600',
-                color: 'var(--color-white)',
+                color: 'var(--color-ink)',
                 marginBottom: '0.5rem'
               }}>
                 Verify Your Email Address
               </h2>
               
               <p style={{
-                color: 'var(--color-white-60)',
+                color: 'var(--color-ink)',
                 marginBottom: '1.5rem',
                 lineHeight: '1.6'
               }}>
-                We've sent a verification link to <strong style={{ color: 'var(--color-white)' }}>{email}</strong>. 
+                We've sent a verification link to <strong style={{ color: 'var(--color-accent-light)' }}>{email}</strong>. 
                 Please check your inbox and click the verification link to continue.
               </p>
 
@@ -110,7 +110,7 @@ const EmailVerificationRequired = ({ email, onResendSuccess }) => {
               }}>
                 <h3 style={{
                   fontWeight: '600',
-                  color: 'var(--color-white)',
+                  color: 'var(--color-ink)',
                   marginBottom: '0.5rem',
                   fontSize: '0.9rem'
                 }}>
@@ -118,7 +118,7 @@ const EmailVerificationRequired = ({ email, onResendSuccess }) => {
                 </h3>
                 <ol style={{
                   fontSize: '0.875rem',
-                  color: 'var(--color-white-60)',
+                  color: 'var(--color-ink)',
                   paddingLeft: '1rem',
                   margin: 0,
                   lineHeight: '1.6'
@@ -134,7 +134,7 @@ const EmailVerificationRequired = ({ email, onResendSuccess }) => {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <p style={{
                   fontSize: '0.875rem',
-                  color: 'var(--color-white-50)'
+                  color: 'var(--color-ink)'
                 }}>
                   Didn't receive the email? Check your spam folder or
                 </p>
@@ -144,7 +144,7 @@ const EmailVerificationRequired = ({ email, onResendSuccess }) => {
                   disabled={isResending}
                   style={{
                     width: '100%',
-                    background: 'linear-gradient(to right, var(--color-purple), var(--color-pink))',
+                    background: 'var(--color-accent-light)',
                     border: 'none',
                     color: 'white',
                     padding: '0.75rem 1rem',
@@ -210,14 +210,14 @@ const EmailVerificationRequired = ({ email, onResendSuccess }) => {
                   style={{
                     background: 'none',
                     border: 'none',
-                    color: 'var(--color-purple)',
+                    color: 'var(--color-accent-light)',
                     fontWeight: '600',
                     fontSize: '0.875rem',
                     cursor: 'pointer',
                     transition: 'var(--transition)'
                   }}
-                  onMouseOver={(e) => e.target.style.color = 'var(--color-pink)'}
-                  onMouseOut={(e) => e.target.style.color = 'var(--color-purple)'}
+                  onMouseOver={(e) => e.target.style.color = 'var(--color-ink)'}
+                  onMouseOut={(e) => e.target.style.color = 'var(--color-accent-light)'}
                 >
                   ← Back to Login
                 </button>
@@ -236,7 +236,7 @@ const EmailVerificationRequired = ({ email, onResendSuccess }) => {
             <h3 style={{
               fontSize: '1.125rem',
               fontWeight: '600',
-              color: 'var(--color-white)',
+              color: 'var(--color-ink)',
               marginBottom: '0.75rem'
             }}>
               Need Help?
@@ -246,7 +246,7 @@ const EmailVerificationRequired = ({ email, onResendSuccess }) => {
               flexDirection: 'column',
               gap: '0.5rem',
               fontSize: '0.875rem',
-              color: 'var(--color-white-60)'
+              color: 'var(--color-ink)'
             }}>
               <p>• Make sure to check your spam/junk folder</p>
               <p>• The verification link expires in 24 hours</p>

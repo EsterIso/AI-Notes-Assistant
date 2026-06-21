@@ -11,14 +11,7 @@ const SUPPORTED_FILE_TYPES = {
     'text/markdown': { extension: 'md', needsConversion: false, maxSize: 10 }
 };
 
-// Get auth headers with token
-const getAuthHeaders = () => {
-    const token = localStorage.getItem('authToken');
-    return {
-        'Content-Type': 'application/json',
-        ...(token && { 'Authorization': `Bearer ${token}` })
-    };
-};
+const jsonHeaders = { 'Content-Type': 'application/json' };
 
 // Validate file type and size
 const validateFile = (file) => {
@@ -67,7 +60,7 @@ const readFileAsBase64 = (file) => {
 async function getNotes() {
     const response = await fetch(`${API_BASE_URL}/notes`, {
         method: 'GET',
-        headers: getAuthHeaders()
+        headers: jsonHeaders
     });
     return await response.json();
 }
@@ -76,7 +69,7 @@ async function getNotes() {
 async function getNoteById(id) {
     const response = await fetch(`${API_BASE_URL}/notes/${id}`, {
         method: 'GET',
-        headers: getAuthHeaders()
+        headers: jsonHeaders
     });
     return await response.json();
 }
@@ -85,7 +78,7 @@ async function getNoteById(id) {
 async function createNote(noteData) {
     const response = await fetch(`${API_BASE_URL}/notes`, {
         method: 'POST',
-        headers: getAuthHeaders(),
+        headers: jsonHeaders,
         body: JSON.stringify(noteData)
     });
     return await response.json();
@@ -95,7 +88,7 @@ async function createNote(noteData) {
 async function updateNote(id, noteData) {
     const response = await fetch(`${API_BASE_URL}/notes/${id}`, {
         method: 'PUT',
-        headers: getAuthHeaders(),
+        headers: jsonHeaders,
         body: JSON.stringify(noteData)
     });
     return await response.json();
@@ -105,7 +98,7 @@ async function updateNote(id, noteData) {
 async function deleteNote(id) {
     const response = await fetch(`${API_BASE_URL}/notes/${id}`, {
         method: 'DELETE',
-        headers: getAuthHeaders()
+        headers: jsonHeaders
     });
     return await response.json();
 }

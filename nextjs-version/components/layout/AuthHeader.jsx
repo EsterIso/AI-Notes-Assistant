@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Brain, UserRound, Search, Bell, Menu, X } from 'lucide-react';
+import React, { useState } from 'react';
+import { Brain, Search, Bell, Menu, X, Settings as SettingsIcon } from 'lucide-react';
 import { useRouter } from 'next/router';
-import DropdownProfile from './SettingsDropdown';
+import { UserButton } from '@clerk/nextjs';
 // import '../../styles/Header.css';
 
 function AuthHeader({ isSidebarOpen, setIsSidebarOpen }) {
-    const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const router = useRouter();
 
@@ -17,19 +16,7 @@ function AuthHeader({ isSidebarOpen, setIsSidebarOpen }) {
         setIsSidebarOpen(!isSidebarOpen);
     };
 
-    // Close dropdown when clicking outside
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (isDropdownOpen && !event.target.closest('.dropdown-container')) {
-                setDropdownOpen(false);
-            }
-        };
-
-        document.addEventListener('click', handleClickOutside);
-        return () => document.removeEventListener('click', handleClickOutside);
-    }, [isDropdownOpen]);
-
-    return ( 
+    return (
         <header className="header">
             <nav className="nav">
                 <button 
@@ -64,13 +51,15 @@ function AuthHeader({ isSidebarOpen, setIsSidebarOpen }) {
                     </button>
                     
                     <span className='dropdown-container'>
-                        <div 
-                            className="user-avatar" 
-                            onClick={() => setDropdownOpen(!isDropdownOpen)}
-                        >
-                            <UserRound size={18} />
-                        </div>
-                        {isDropdownOpen && <DropdownProfile />}
+                        <UserButton>
+                            <UserButton.MenuItems>
+                                <UserButton.Link
+                                    label="Settings"
+                                    labelIcon={<SettingsIcon size={16} />}
+                                    href="/settings"
+                                />
+                            </UserButton.MenuItems>
+                        </UserButton>
                     </span>
                 </div>
             </nav>

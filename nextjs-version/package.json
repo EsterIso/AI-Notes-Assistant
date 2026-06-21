@@ -9,22 +9,18 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "bcryptjs": "^3.0.2",
+    "@clerk/nextjs": "^7.5.7",
     "dotenv": "^17.2.2",
-    "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.525.0",
     "mammoth": "^1.10.0",
     "mongoose": "^8.18.1",
     "next": "^15.5.19",
-    "nodemailer": "^7.0.6",
     "openai": "^5.20.2",
     "pdf-parse": "^1.1.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-markdown": "^10.1.0",
-    "react-router-dom": "^7.9.1",
-    "react-toastify": "^11.0.5",
-    "vite": "^5.4.20"
+    "react-toastify": "^11.0.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

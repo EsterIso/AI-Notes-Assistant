@@ -1,19 +1,19 @@
-import { useAuth } from '../context/AuthContext';
+import { useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import HomePage from './public/HomePage';
 
 export default function Home() {
-  const { isAuthenticated, isLoading } = useAuth();
+  const { isSignedIn, isLoaded } = useUser();
   const router = useRouter();
 
   useEffect(() => {
-    if (!isLoading && isAuthenticated) {
+    if (isLoaded && isSignedIn) {
       router.push('/dashboard');
     }
-  }, [isAuthenticated, isLoading, router]);
+  }, [isSignedIn, isLoaded, router]);
 
-  if (isLoading) {
+  if (!isLoaded) {
     return <div className="loading-container">
       <div className="loading-spinner">Checking authentication...</div>
     </div>;

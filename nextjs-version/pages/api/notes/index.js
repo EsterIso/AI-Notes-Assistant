@@ -1,6 +1,7 @@
+import { getAuth } from '@clerk/nextjs/server';
 import { connectDB } from '../../../lib/mongodb.js';
 import { createNote, getNotes } from '../../../utils/notes.controller.js';
-import { protect } from '../../../middleware/auth.middleware.js';
+import { getOrCreateUser } from '../../../utils/user.controller.js';
 
 export const config = {
   api: {
@@ -10,25 +11,17 @@ export const config = {
   },
 }
 
-// Helper to run middleware
-const runMiddleware = (req, res, fn) => {
-  return new Promise((resolve, reject) => {
-    fn(req, res, (result) => {
-      if (result instanceof Error) {
-        return reject(result);
-      }
-      return resolve(result);
-    });
-  });
-};
-
 export default async function handler(req, res) {
   try {
+    const { userId } = getAuth(req);
+    if (!userId) {
+      return res.status(401).json({ success: false, message: 'Not authorized' });
+    }
+    req.user = { userId };
+
     await connectDB();
-    
-    // Run auth middleware
-    await runMiddleware(req, res, protect);
-    
+    await getOrCreateUser(userId);
+
     if (req.method === 'POST') {
       return createNote(req, res);
     } else if (req.method === 'GET') {

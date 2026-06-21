@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { deleteUser } from '../services/auth.service';
-import { useAuth } from '../context/AuthContext';
-import { useRouter } from 'next/router';
+import { useClerk } from '@clerk/nextjs';
 import { toast } from 'react-toastify';
 
 function useDeleteAccount() {
@@ -10,8 +9,7 @@ function useDeleteAccount() {
     const [isDeleting, setIsDeleting] = useState(false);
     const [errors, setErrors] = useState({});
 
-    const { logout } = useAuth();
-    const router = useRouter();
+    const { signOut } = useClerk();
 
     const handleConfirmationChange = (e) => {
         setDeleteConfirmation(e.target.value);
@@ -60,8 +58,7 @@ function useDeleteAccount() {
             if (success) {
                 // Successful deletion
                 toast.success(message || 'Account deleted successfully');
-                logout(); // Clear auth state
-                router.push('/'); // Redirect to home
+                await signOut({ redirectUrl: '/' });
             } else {
                 // Handle error from server
                 const errorMsg = message || 'Failed to delete account';

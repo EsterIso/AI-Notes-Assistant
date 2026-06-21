@@ -342,7 +342,7 @@
 }
 
 .note-detail-header h1 {
-    font-size: 1.75rem; /* slightly smaller than section headers */
+    font-size: 1.75rem; 
     font-weight: 700;
     color: var(--color-white);
     margin: 0.25rem 0;
@@ -529,7 +529,7 @@
     text-align: center;
     padding: 1.5rem;
     cursor: pointer;
-    transition: transform 0.6s;
+    transition: 1s;
     transform-style: preserve-3d;
     position: relative;
     color: var(--color-white); 
@@ -546,6 +546,10 @@
 
 .card.flipped {
     transform: rotateY(180deg);
+}
+
+.card.flipped .card-front{
+    display: none;
 }
 
 .card-front,

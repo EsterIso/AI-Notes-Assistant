@@ -1,4 +1,4 @@
-import { AuthProvider } from '../context/AuthContext';
+import { ClerkProvider } from '@clerk/nextjs';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../styles/App.css';
@@ -10,9 +10,21 @@ import '../styles/LoginPage.css';
 import '../styles/Sidebar.css';
 import '../styles/Settings.css';
 
+const clerkAppearance = {
+  variables: {
+    colorPrimary: '#40798c',
+    colorBackground: '#ffffff',
+    colorText: '#0b2027',
+    colorTextSecondary: 'rgba(11, 32, 39, 0.7)',
+    colorInputBackground: '#ffffff',
+    colorInputText: '#0b2027',
+    borderRadius: '1.5rem',
+  },
+};
+
 export default function MyApp({ Component, pageProps }) {
   return (
-    <AuthProvider>
+    <ClerkProvider appearance={clerkAppearance} afterSignOutUrl="/">
       <Component {...pageProps} />
       <ToastContainer
         position="top-right"
@@ -30,6 +42,6 @@ export default function MyApp({ Component, pageProps }) {
         bodyClassName="custom-toast-body"
         progressClassName="custom-toast-progress"
       />
-    </AuthProvider>
+    </ClerkProvider>
   );
 }

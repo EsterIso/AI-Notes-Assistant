@@ -1,25 +1,18 @@
+import { getAuth } from '@clerk/nextjs/server';
 import { connectDB } from '../../../lib/mongodb.js';
 import { getNoteById, updateNote, deleteNote } from '../../../utils/notes.controller.js';
-import { protect } from '../../../middleware/auth.middleware.js';
-
-// Helper to run middleware
-const runMiddleware = (req, res, fn) => {
-  return new Promise((resolve, reject) => {
-    fn(req, res, (result) => {
-      if (result instanceof Error) {
-        return reject(result);
-      }
-      return resolve(result);
-    });
-  });
-};
+import { getOrCreateUser } from '../../../utils/user.controller.js';
 
 export default async function handler(req, res) {
   try {
+    const { userId } = getAuth(req);
+    if (!userId) {
+      return res.status(401).json({ success: false, message: 'Not authorized' });
+    }
+    req.user = { userId };
+
     await connectDB();
-    
-    // Run auth middleware
-    await runMiddleware(req, res, protect);
+    await getOrCreateUser(userId);
     req.params = { id: req.query.id };
     if (req.method === 'GET') {
       return getNoteById(req, res);

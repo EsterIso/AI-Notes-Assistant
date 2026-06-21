@@ -1,21 +1,20 @@
-import { useAuth } from '../context/AuthContext';
+import { useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import LoginPage from './auth/LoginPage';
 import Settings from './app/Settings';
 import AppLayout from '../components/layout/AppLayout';
 
 export default function SettingsPage() {
-  const { isAuthenticated, isLoading } = useAuth();
+  const { isSignedIn, isLoaded } = useUser();
   const router = useRouter();
 
   useEffect(() => {
-    if (!isLoading && !isAuthenticated) {
+    if (isLoaded && !isSignedIn) {
       router.push('/');
     }
-  }, [isAuthenticated, isLoading, router]);
+  }, [isSignedIn, isLoaded, router]);
 
-  if (isLoading) {
+  if (!isLoaded) {
     return (
       <div className="loading-container">
         <div className="loading-spinner">Loading...</div>
@@ -23,8 +22,8 @@ export default function SettingsPage() {
     );
   }
 
-  if (!isAuthenticated) {
-    return <LoginPage />;
+  if (!isSignedIn) {
+    return null;
   }
 
   return (

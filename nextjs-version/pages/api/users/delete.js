@@ -1,57 +1,30 @@
+import { getAuth, clerkClient } from '@clerk/nextjs/server';
 import { connectDB } from '../../../lib/mongodb.js';
-import { deleteUser } from '../../../utils/user.controller.js';
-import jwt from 'jsonwebtoken';
+import Note from '../../../models/notes.model.js';
+import User from '../../../models/user.model.js';
 
 export default async function handler(req, res) {
   if (req.method !== 'DELETE') {
-    return res.status(405).json({ 
-      success: false, 
-      message: 'Method not allowed' 
-    });
+    return res.status(405).json({ success: false, message: 'Method not allowed' });
   }
-  
+
+  const { userId } = getAuth(req);
+  if (!userId) {
+    return res.status(401).json({ success: false, message: 'Not authorized' });
+  }
+
   try {
     await connectDB();
-    
-    // Extract and verify JWT token
-    const authHeader = req.headers.authorization;
-    
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
-      return res.status(401).json({ 
-        success: false, 
-        message: 'Access denied. No token provided.' 
-      });
-    }
 
-    const token = authHeader.split(' ')[1];
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    console.log('Decoded JWT:', decoded); // Check what fields exist
-    req.user = decoded;
-    
-    // Call your controller
-    return deleteUser(req, res);
-    
+    await Note.deleteMany({ userId });
+    await User.findOneAndDelete({ clerkId: userId });
+
+    const client = await clerkClient();
+    await client.users.deleteUser(userId);
+
+    return res.json({ success: true, message: 'User account deleted successfully' });
   } catch (error) {
-    console.error('Delete API error:', error);
-    
-    if (error.name === 'JsonWebTokenError') {
-      return res.status(401).json({
-        success: false,
-        message: 'Invalid token'
-      });
-    }
-    
-    if (error.name === 'TokenExpiredError') {
-      return res.status(401).json({
-        success: false,
-        message: 'Token expired. Please login again.'
-      });
-    }
-    
-    return res.status(500).json({
-      success: false,
-      message: 'Internal server error',
-      error: error.message
-    });
+    console.error('Delete account error:', error);
+    return res.status(500).json({ success: false, message: 'Error deleting user account', error: error.message });
   }
 }

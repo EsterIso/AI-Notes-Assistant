@@ -76,7 +76,7 @@ function Sidebar({ isSidebarOpen, setIsSidebarOpen }) {
         {
             title: "Workspace",
             items: [
-                { icon: Home, label: "Dashboard", path: "/" },
+                { icon: Home, label: "Dashboard", path: "/dashboard" },
             ]
         },
         {
